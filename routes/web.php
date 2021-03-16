@@ -22,3 +22,9 @@ Route::get('/home', 'UserController@display');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route qui permet de connaître la langue active
+Route::get('locale', 'LocalizationController@getLang')->name('getlang');
+
+// Route qui permet de modifier la langue
+Route::get('locale/{lang}', 'LocalizationController@setLang')->name('setlang');
