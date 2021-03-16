@@ -35,7 +35,13 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="locale/en">English</a>
-                            <a class="nav-link" href="locale/fr">{{ __("Français") }}</a>
+                            <a class="nav-link" href="locale/fr">Français</a>
+                            <a class="nav-link" href="locale/it">Italien</a>
+                            <select name="lang" id="lang">
+                                <option value="en">English</option>
+                                <option value="fr">Français</option>
+                                <option value="it">Italiano</option>
+                            </select>
                         </li>
                     </ul>
 
@@ -44,11 +50,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                 </li>
                             @endif
                         @else

@@ -1,6 +1,6 @@
 {
     "Accueil": "Home",
     "Français": "French",
-    "Liste": "List",
-    "Contact": "Contact"
+    "Connexion": "Login",
+    "Inscription": "Register"
 }
