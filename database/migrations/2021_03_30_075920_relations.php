@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Questions extends Migration
+class Relations extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class Questions extends Migration
      */
     public function up()
     {
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::create('relations', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('content');
-            $table->string('video_path')->nullable();;
-            $table->integer('users_id')->unsigned();
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->integer('questions_id')->unsigned();
+            $table->foreign('questions_id')->references('id')->on('questions');
             $table->integer('domains_id')->unsigned();
             $table->foreign('domains_id')->references('id')->on('domains');
         });
@@ -31,6 +29,6 @@ class Questions extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions');
+        Schema::dropIfExists('relations');
     }
 }

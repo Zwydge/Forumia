@@ -9,4 +9,19 @@ class User extends Authenticatable
 {
     use \Illuminate\Notifications\Notifiable;
     protected $fillable = array('name', 'username', 'email', 'password', 'roles');
+
+    public function reputations()
+    {
+        return $this->belongsToMany(Reputations::class);
+    }
+
+    public function roles()
+    {
+        return $this->belongsToOne(Roles::class);
+    }
+
+    public function notations()
+    {
+        return $this->belongsToMany(Notations::class);
+    }
 }
