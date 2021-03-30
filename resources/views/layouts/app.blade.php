@@ -7,10 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Knowledger') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.js') }}" defer></script>
+    <script src="{{ asset('js/custom.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -37,11 +40,6 @@
                             <a class="nav-link" href="locale/en">English</a>
                             <a class="nav-link" href="locale/fr">Français</a>
                             <a class="nav-link" href="locale/it">Italien</a>
-                            <select name="lang" id="lang">
-                                <option value="en">English</option>
-                                <option value="fr">Français</option>
-                                <option value="it">Italiano</option>
-                            </select>
                         </li>
                     </ul>
 
