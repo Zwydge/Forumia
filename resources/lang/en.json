@@ -2,5 +2,6 @@
     "Accueil": "Home",
     "Français": "French",
     "Connexion": "Login",
-    "Inscription": "Register"
+    "Inscription": "Register",
+    "Vous êtes connecté": "You're already logged in"
 }

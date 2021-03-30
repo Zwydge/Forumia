@@ -39,7 +39,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="locale/en">English</a>
                             <a class="nav-link" href="locale/fr">Français</a>
-                            <a class="nav-link" href="locale/it">Italien</a>
                         </li>
                     </ul>
 
