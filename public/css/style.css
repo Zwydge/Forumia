@@ -73,3 +73,6 @@ input.search_bar::placeholder {
     color: #ffffff80;
     font-size: 30px;
 }
+.ui-helper-hidden-accessible {
+    display: none;
+}
