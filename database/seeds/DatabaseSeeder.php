@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
 
         $questions = [
             ['content' => 'Gneu gneu le soleil, il est chaud ???', 'video_path' => "path",'users_id' => 2, 'domains_id' => 2],
-            ['content' => 'Pourquoi jujutsu est top1, vente, animé, personnage, animation, combat, suçage de bite ?', 'video_path' => "path",'users_id' => 4, 'domains_id' => 1],
+            ['content' => 'Pourquoi jujutsu est top1, vente, animé, personnage, animation, combat ?', 'video_path' => "path",'users_id' => 4, 'domains_id' => 1],
             ['content' => 'Comment développer en JAVA ?', 'video_path' => "path",'users_id' => 3, 'domains_id' => 4],
         ];
 
