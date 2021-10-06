@@ -2,6 +2,8 @@
     "Accueil": "Home",
     "Français": "French",
     "Connexion": "Login",
+    "Déconnexion": "Logout",
     "Inscription": "Register",
-    "Vous êtes connecté": "You're already logged in"
+    "Vous êtes déjà connecté": "You're already logged in",
+    "Posez votre question": "Ask your question"
 }
