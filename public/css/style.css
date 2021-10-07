@@ -61,7 +61,9 @@ nav.navbar .container a{
 .dropdown-menu.dropdown-menu-right.show a {
     color: #000 !important;
 }
-
+.title.m-b-md {
+    color: #fff;
+}
 input.search_bar {
     width: 50%;
     background-color: transparent;
