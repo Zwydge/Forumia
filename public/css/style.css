@@ -1,6 +1,5 @@
 html, body {
     background-color: #21094e;
-    color: #fff;
     font-family: 'Nunito', sans-serif;
     font-weight: 200;
     height: 100vh;
@@ -56,10 +55,15 @@ html, body {
 nav.navbar {
     background-color: #511281 !important;
 }
-nav.navbar a{
+nav.navbar .container a{
     color:#fff !important;
 }
-
+.dropdown-menu.dropdown-menu-right.show a {
+    color: #000 !important;
+}
+.title.m-b-md {
+    color: #fff;
+}
 input.search_bar {
     width: 50%;
     background-color: transparent;
