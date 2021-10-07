@@ -55,8 +55,11 @@ html, body {
 nav.navbar {
     background-color: #511281 !important;
 }
-nav.navbar a{
+nav.navbar .container a{
     color:#fff !important;
+}
+.dropdown-menu.dropdown-menu-right.show a {
+    color: #000 !important;
 }
 
 input.search_bar {
