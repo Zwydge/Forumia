@@ -16,7 +16,7 @@ class Questions extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
             $table->text('content');
-            $table->string('video_path')->nullable();;
+            $table->string('video_path')->nullable();
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id')->references('id')->on('users');
             $table->integer('domains_id')->unsigned();
