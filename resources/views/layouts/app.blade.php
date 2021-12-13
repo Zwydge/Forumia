@@ -49,18 +49,18 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="{{route('domains')}}" class="nav-link">
                                 Domaines
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="{{route('questions')}}" class="nav-link">
                                 Questions
                             </a>
                         </li>
                         @auth
                             <li class="nav-item">
-                                <a href="" class="nav-link">
+                                <a href="{{route('ask')}}" class="nav-link">
                                     Poser une question
                                 </a>
                             </li>
