@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Questions;
+use Response;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -24,5 +26,13 @@ class QuestionController extends Controller
     public function my_questions()
     {
         return view('pages.myquestions');
+    }
+
+    public function get()
+    {
+        $question = Questions::all();
+        return Response::json([
+            'questions' => $question
+        ], 200); // Status code here
     }
 }
