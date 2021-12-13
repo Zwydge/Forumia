@@ -37,17 +37,17 @@
             <div class="domain_btn"><img src="{{ asset("media/img/domains/animals.png") }}" alt=""></div>
         </div>
         <div class="actus_list">
-            @for ($i = 0; $i < 10; $i++)
+            @foreach ($questions as $question)
             <div class="actus_elem">
                 <fieldset>
-                    <legend>Animaux</legend>
+                    <legend>{{ $question->label }}</legend>
                     <div class="content_question">
                         <div class="left_avatar_ask avatar_img">
                             <img src="{{asset("media/img/avatar/zwedge.jpg")}}" alt="">
-                            <div class="pseudo_ask">Zwedge</div>
+                            <div class="pseudo_ask">{{ $question->name }}</div>
                         </div>
                         <div class="right_question_ask">
-                            <div class="question">Quel produit dois-je utiliser pour les puces de mon chien ?</div>
+                            <div class="question">{{ $question->content }}</div>
                         </div>
                     </div>
                     <div class="content_actions">
@@ -72,7 +72,7 @@
                     </div>
                 </fieldset>
             </div>
-            @endfor
+            @endforeach
         </div>
     </div>
     <div class="right_domains domain_css">

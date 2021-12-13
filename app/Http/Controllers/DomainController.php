@@ -15,4 +15,5 @@ class DomainController extends Controller
     {
         return view('pages.mydomains');
     }
+
 }

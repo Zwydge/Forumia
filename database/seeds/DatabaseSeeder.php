@@ -12,12 +12,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $domains = [
-            ['name' => 'Film'],
-            ['name' => 'Astronomie'],
-            ['name' => 'Automobile'],
-            ['name' => 'Développement'],
-            ['name' => 'Cuisine'],
-            ['name' => 'Science'],
+            ['label' => 'Film'],
+            ['label' => 'Astronomie'],
+            ['label' => 'Automobile'],
+            ['label' => 'Développement'],
+            ['label' => 'Cuisine'],
+            ['label' => 'Science'],
         ];
 
         DB::table('domains')->insert($domains);
