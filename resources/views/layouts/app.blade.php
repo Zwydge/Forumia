@@ -102,10 +102,7 @@
                                         @csrf
                                     </form>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 7921379fef3d99646070dadf280183eb9a02c5d0
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
