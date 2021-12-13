@@ -81,6 +81,7 @@ input.search_bar::placeholder {
     display: none;
 }
 
+
 .content .title{
     color:#fff;
 }
@@ -235,4 +236,7 @@ span.number_stat {
 .action_menu a img {
     width: 25px;
     margin-right: 10px;
+}
+.card-body {
+    background-color: #511281;
 }

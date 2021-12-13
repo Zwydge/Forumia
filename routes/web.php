@@ -28,3 +28,9 @@ Route::get('locale', 'LocalizationController@getLang')->name('getlang');
 
 // Route qui permet de modifier la langue
 Route::get('locale/{lang}', 'LocalizationController@setLang')->name('setlang');
+
+// Route qui renvoie vers la page de gestion de compte
+Route::get('/user', 'UserController@display')->name('user');
+
+// Route qui update les informations de compte
+Route::post('/userupdate', 'UserController@update')->name('userupdate');
