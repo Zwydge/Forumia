@@ -55,10 +55,15 @@ html, body {
 nav.navbar {
     background-color: #511281 !important;
 }
-nav.navbar a{
+nav.navbar .container a{
     color:#fff !important;
 }
-
+.dropdown-menu.dropdown-menu-right.show a {
+    color: #000 !important;
+}
+.title.m-b-md {
+    color: #fff;
+}
 input.search_bar {
     width: 50%;
     background-color: transparent;
@@ -75,6 +80,7 @@ input.search_bar::placeholder {
 .ui-helper-hidden-accessible {
     display: none;
 }
+
 .content .title{
     color:#fff;
 }
