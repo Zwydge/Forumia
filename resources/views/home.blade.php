@@ -33,21 +33,22 @@
     </div>
     <div class="center_actus">
         <div class="domains_list domain_css">
-            <div class="domain_btn"><img src="{{ asset("media/img/domains/animals.png") }}" alt=""></div>
-            <div class="domain_btn"><img src="{{ asset("media/img/domains/animals.png") }}" alt=""></div>
+            @foreach($domains as $domain)
+                <div class="domain_btn" enable="disable" domain-id="{{ $domain['label'] }}">{{ $domain['label'] }}</div>
+            @endforeach
         </div>
         <div class="actus_list">
             @foreach ($questions as $question)
-            <div class="actus_elem">
+            <div class="actus_elem" data-groups='["{{$question->label}}"]' data-date-created="2016-08-12">
                 <fieldset>
                     <legend>{{ $question->label }}</legend>
                     <div class="content_question">
                         <div class="left_avatar_ask avatar_img">
                             <img src="{{asset("media/img/avatar/zwedge.jpg")}}" alt="">
-                            <div class="pseudo_ask">{{ $question->name }}</div>
                         </div>
                         <div class="right_question_ask">
                             <div class="question">{{ $question->content }}</div>
+                            <div class="author">{{$question->name}}</div>
                         </div>
                     </div>
                     <div class="content_actions">
@@ -62,12 +63,6 @@
                         <div class="action_elem">
                             <img src="{{asset("media/img/tech/like.png")}}" alt="">
                             <span class="number_stat">19</span>
-                        </div>
-                        <div class="action_elem">
-                            <img src="{{asset("media/img/tech/share.png")}}" alt="">
-                        </div>
-                        <div class="action_elem">
-                            <img src="{{asset("media/img/tech/flag.png")}}" alt="">
                         </div>
                     </div>
                 </fieldset>

@@ -70,5 +70,30 @@ $( document ).ready(function() {
                 }
             }
         })
+
+        var Shuffle = window.Shuffle;
+        var element = document.querySelector('.actus_list');
+        var sizer = element.querySelector('.actus_elem');
+
+        var shuffleInstance = new Shuffle(element, {
+            itemSelector: '.actus_elem',
+        });
+
+        var cat_arr = [];
+
+        $('.domains_list.domain_css > div').click(function () {
+            var text = $(this).text();
+            var enable = $(this).attr("enable");
+            if(enable == "enable"){
+                $(this).attr("enable", "disable");
+                cat_arr.splice(cat_arr.indexOf(text), 1);
+            }else{
+                $(this).attr("enable", "enable");
+                cat_arr.push(text);
+            }
+            console.log(cat_arr);
+            shuffleInstance.filter(cat_arr);
+        })
+
     } );
 });
