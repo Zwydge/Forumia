@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Domains extends Model
 {
-    protected $fillable = array('name');
+    protected $fillable = array('label');
 
     public function reputation()
     {

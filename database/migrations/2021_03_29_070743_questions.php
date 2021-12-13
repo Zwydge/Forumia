@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class Questions extends Migration
@@ -21,6 +22,8 @@ class Questions extends Migration
             $table->foreign('users_id')->references('id')->on('users');
             $table->integer('domains_id')->unsigned();
             $table->foreign('domains_id')->references('id')->on('domains');
+            $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime('updated_at')->nullable();
         });
     }
 
