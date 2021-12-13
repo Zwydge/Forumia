@@ -88,7 +88,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
+
 
                                     <a class="dropdown-item" href="">
                                         Mon compte
