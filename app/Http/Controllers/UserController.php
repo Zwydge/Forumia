@@ -46,4 +46,34 @@ class UserController extends Controller
             return view('main/account', ['role' => $role -> name]);
     }
 
+
+
+
+        public function update(Request $request)
+        {
+            $input = $request->all();
+            //$avatar = $request->file('avatar');
+            $user = User::select()->where('id', Auth::user()->id)->first();
+            if(isset($input['username'])){
+                $user->name = $input['username'];
+            }
+            if(isset($input['email'])){
+                $user->password = bcrypt($input['email']);
+            }
+            //if(isset($input['password'])){
+            //    $user->password = bcrypt($input['password']);
+            //}
+            //$file = $request->avatar;
+            //if(isset($avatar)){
+            //    $location = "public/media/avatar/".Auth::user()->id."";
+            //    File::deleteDirectory(public_path("/media/avatar/".Auth::user()->id));
+            //    $avatar->move(base_path($location), $file->getClientOriginalName());
+             //   $user->avatar = "".Auth::user()->id."/".$file->getClientOriginalName();
+            //}
+            $user->save();
+
+            return response()->json(['message' => $user], 200,['data' => $user]);
+    }
+
+
 }

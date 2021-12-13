@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use \Illuminate\Notifications\Notifiable;
+
     protected $fillable = array('id','name', 'username', 'email', 'password', 'roles_id', 'avatar');
 
     public function reputations()

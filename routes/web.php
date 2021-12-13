@@ -29,6 +29,7 @@ Route::get('locale', 'LocalizationController@getLang')->name('getlang');
 // Route qui permet de modifier la langue
 Route::get('locale/{lang}', 'LocalizationController@setLang')->name('setlang');
 
+
 // QUESTIONS
 Route::get('/questions', 'QuestionController@index')->name('questions');
 Route::get('/question', 'QuestionController@one_question')->name('question');
@@ -41,3 +42,10 @@ Route::get('/answers', 'AnswerController@index')->name('answers');
 //DOMAINS
 Route::get('/domains', 'DomainController@index')->name('domains');
 Route::get('/mydomains', 'DomainController@my_domains')->name('mydomains');
+
+// Route qui renvoie vers la page de gestion de compte
+Route::get('/user', 'UserController@display')->name('user');
+
+// Route qui update les informations de compte
+Route::post('/userupdate', 'UserController@update')->name('userupdate');
+
