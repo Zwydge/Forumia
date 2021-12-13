@@ -27,21 +27,23 @@ class UserController extends Controller
                 $user->name = $input['username'];
             }
             if(isset($input['email'])){
-                $user->password = bcrypt($input['email']);
+                $user->email = ($input['email']);
             }
             //if(isset($input['password'])){
             //    $user->password = bcrypt($input['password']);
             //}
-            //$file = $request->avatar;
-            //if(isset($avatar)){
-            //    $location = "public/media/avatar/".Auth::user()->id."";
-            //    File::deleteDirectory(public_path("/media/avatar/".Auth::user()->id));
-            //    $avatar->move(base_path($location), $file->getClientOriginalName());
-             //   $user->avatar = "".Auth::user()->id."/".$file->getClientOriginalName();
-            //}
+            $file = $request->avatar;
+            if(isset($avatar)){
+                $location = "public/media/avatar/".Auth::user()->id."";
+                File::deleteDirectory(public_path("/media/avatar/".Auth::user()->id));
+                $avatar->move(base_path($location), $file->getClientOriginalName());
+                $user->avatar = "".Auth::user()->id."/".$file->getClientOriginalName();
+            }
             $user->save();
 
-            return response()->json(['message' => $user], 200,['data' => $user]);
+            $role = Roles::select()->where('id', Auth::user()->roles_id)->first();
+
+            return view('main/account', ['role' => $role -> name]);
     }
 
 }
