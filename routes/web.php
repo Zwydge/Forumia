@@ -13,11 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/home', 'UserController@display');
+Route::get('/', function () {return view('main.accueil');});
 
 Auth::routes();
 
@@ -34,6 +30,7 @@ Route::get('/questions', 'QuestionController@index')->name('questions');
 Route::get('/question', 'QuestionController@one_question')->name('question');
 Route::get('/ask', 'QuestionController@ask_question')->name('ask');
 Route::get('/myquestions', 'QuestionController@my_questions')->name('myquestions');
+Route::post('/create_quest', 'QuestionController@create')->name('createquest');
 
 // ANSWERS
 Route::get('/answers', 'AnswerController@index')->name('answers');
