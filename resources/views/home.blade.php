@@ -39,7 +39,7 @@
         </div>
         <div class="actus_list">
             @foreach ($questions as $question)
-            <div class="actus_elem" data-groups='["{{$question->label}}"]' data-date-created="2016-08-12">
+            <a href="{{route('question', ["id" => $question->id])}}" class="actus_elem" data-groups='["{{$question->label}}"]' data-date-created="2016-08-12">
                 <fieldset>
                     <legend>{{ $question->label }}</legend>
                     <div class="content_question">
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </fieldset>
-            </div>
+            </a>
             @endforeach
         </div>
     </div>
