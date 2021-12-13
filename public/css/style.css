@@ -76,3 +76,6 @@ input.search_bar::placeholder {
 .ui-helper-hidden-accessible {
     display: none;
 }
+.card-body{
+    background-color: #511281;
+}
