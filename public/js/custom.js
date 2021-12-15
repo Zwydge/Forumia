@@ -3,7 +3,7 @@ $( document ).ready(function() {
 
         var availableTags = [];
 
-        /*Récupération de la liste des questions*/
+        /* Récupération de la liste des questions */
         $.ajax({
             url : '/api/questions_get',
             type : 'GET',
@@ -22,5 +22,6 @@ $( document ).ready(function() {
         $( ".search_bar" ).autocomplete({
             source: availableTags
         });
-    } );
+
+    });
 });
