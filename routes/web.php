@@ -13,11 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('main/accueil');
-});
-
-Route::get('/home', 'UserController@display');
+Route::get('/', function () {return view('main.accueil');});
 
 Auth::routes();
 
@@ -28,3 +24,17 @@ Route::get('locale', 'LocalizationController@getLang')->name('getlang');
 
 // Route qui permet de modifier la langue
 Route::get('locale/{lang}', 'LocalizationController@setLang')->name('setlang');
+
+// QUESTIONS
+Route::get('/questions', 'QuestionController@index')->name('questions');
+Route::get('/question', 'QuestionController@one_question')->name('question');
+Route::get('/ask', 'QuestionController@ask_question')->name('ask');
+Route::get('/myquestions', 'QuestionController@my_questions')->name('myquestions');
+Route::post('/create_quest', 'QuestionController@create')->name('createquest');
+
+// ANSWERS
+Route::get('/answers', 'AnswerController@index')->name('answers');
+
+//DOMAINS
+Route::get('/domains', 'DomainController@index')->name('domains');
+Route::get('/mydomains', 'DomainController@my_domains')->name('mydomains');

@@ -15,6 +15,6 @@ class Questions extends Model
 
     public function domains()
     {
-        return $this->belongsToMany(Relations::class);
+        return $this->belongsToMany(Domains::class);
     }
 }

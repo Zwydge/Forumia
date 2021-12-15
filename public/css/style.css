@@ -80,3 +80,265 @@ input.search_bar::placeholder {
 .ui-helper-hidden-accessible {
     display: none;
 }
+
+.content .title{
+    color:#fff;
+}
+nav .nav-item.dropdown.show .dropdown-menu a{
+    color:#000 !important;
+}
+.domain_css img{
+    width:50px;
+    height:50px;
+    border-radius: 50px;
+    border:2px solid #b76bee;
+    cursor:pointer;
+}
+.container.home_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width:100%;
+    margin:0;
+}
+.left_account_col {
+    background-color: #ffffff21;
+    border-radius: 15px;
+    border: 4px solid #860b9c;
+    width: 20%;
+    height:auto;
+    clip-path: polygon(0 0, 88% 10%, 87% 88%, 0% 100%);
+    -webkit-box-shadow: 12px 0px 15px -2px rgb(170 11 159 / 49%);
+    box-shadow: 12px 10px 15px -2px rgb(170 11 159 / 49%);
+    padding: 40px 30px 40px 0px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: 3s linear 1s infinite alternate animateBorder;
+}
+@keyframes animateBorder {
+    from { border: 4px solid #ac07cb; }
+    to   { border: 4px solid rgba(153, 29, 232, 0.13); }
+}
+.avatar_img img{
+    width:50px;
+    height:50px;
+    border-radius: 50px;
+    border:2px solid #b76bee;
+    cursor:pointer;
+}
+.content_question .avatar_img img{
+    width:30px;
+    height:30px;
+}
+.center_actus {
+    width: 60%;
+    background-color: #511281;
+    padding: 15px;
+    border-radius: 10px;
+}
+.domains_list.domain_css {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.domains_list.domain_css .domain_btn {
+    margin: 0 5px;
+}
+
+.actus_elem legend, .actus_elem fieldset {
+    color: #fff;
+    transition: .3s;
+}
+.actus_list {
+    padding: 10px;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+}
+.content_question {
+    display: flex;
+    flex-direction: row;
+}
+.left_avatar_ask.avatar_img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: -4px;
+}
+.right_question_ask {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 4px;
+    width: 100%;
+    position: relative;
+}
+.author {
+    width: 100%;
+    text-align: right;
+    font-size: 12px;
+    font-style: italic;
+    transition: .3s;
+}
+.actus_elem fieldset {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 4px;
+}
+.actus_elem legend {
+    width: auto;
+    text-align: right;
+    font-size: 15px;
+    margin-right: 2px;
+    text-transform: uppercase;
+}
+.action_elem img {
+    width: 15px;
+}
+.content_actions {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+.action_elem {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+span.number_stat {
+    display: block;
+    margin: 0 7px;
+}
+.actus_elem {
+    width: 30% !important;
+    margin: 10px !important;
+    position: relative;
+    transition: .3s;
+}
+.right_domains {
+    background-color: #ffffff21;
+    border-radius: 15px;
+    border: 4px solid #860b9c;
+    width: 15%;
+    height: auto;
+    -webkit-box-shadow: 12px 0px 15px -2px rgb(170 11 159 / 49%);
+    box-shadow: 12px 10px 15px -2px rgb(170 11 159 / 49%);
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: 3s linear 1s infinite alternate animateBorder;
+}
+.elem_right_domain {
+    margin-bottom: 10px;
+}
+.action_menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.action_menu a {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    margin:5px 0;
+}
+.action_menu a img {
+    width: 25px;
+    margin-right: 10px;
+}
+.checkbox_domains input {
+    display: none;
+}
+.checkbox_domains label {
+    color: #ffffff73;
+    margin-right: 15px;
+    border-radius: 50px;
+    border:2px solid #ffffff73;
+    padding:8px 20px;
+    cursor:pointer;
+    transition: .3s;
+}
+.checkbox_domains .label_selected{
+    color: #fff;
+    border:2px solid #fff;
+}
+.checkbox_domains {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 15px auto;
+}
+.validation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 50%;
+    margin: 0 auto;
+}
+.validation input {
+    color: #fff;
+    background-color: transparent;
+    box-shadow: none;
+    border: 2px solid #fff;
+    padding: 6px 34px;
+    border-radius: 6px;
+    transition: .3s;
+    font-weight: bold;
+}
+.validation input:hover {
+    color: #511281;
+    background-color: #fff;
+}
+.notifyjs-bootstrap-error {
+    color: #511281 !important;
+    background-color: #fff !important;
+    border-color: #fff !important;
+    background-image: none !important;
+    padding: 5px 12px !important;
+}
+.domains_list.domain_css .domain_btn {
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    padding: 1px 12px;
+    cursor: pointer;
+}
+.domains_list.domain_css {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.actus_elem:hover fieldset{
+    background-color: #fff;
+}
+.actus_elem .question{
+    transition: .3s;
+}
+.actus_elem:hover .question, .actus_elem:hover .author{
+    color: #511281;
+}
+.actus_elem:hover .content_actions{
+    background-color: rgba(81, 18, 129, 0.65);
+}
+.actus_elem:hover legend{
+    text-shadow: 1px 1px 2px #511281;
+}
+.domains_list.domain_css > div[enable=enable]{
+    background-color: #fff;
+    color: #511281;
+}
