@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -72,9 +73,10 @@ class DatabaseSeeder extends Seeder
         DB::table('questions')->insert($questions);
 
         $answers = [
-            ['content' => 'Gneu gneu le soleil, ah bon ?', 'video_path' => "path",'users_id' => 4, 'questions_id' => 1],
-            ['content' => 'parce que cest bien', 'video_path' => "path",'users_id' => 3, 'questions_id' => 2],
-            ['content' => 'renseigne toi sur les bases', 'video_path' => "path",'users_id' => 2, 'questions_id' => 3],
+            ['ans_content' => 'Gneu gneu le soleil, ah bon ?', 'video_path' => "path",'users_id' => 4, 'questions_id' => 1, 'answer_id' => null],
+            ['ans_content' => 'parce que cest bien', 'video_path' => "path",'users_id' => 3, 'questions_id' => 2, 'answer_id' => null],
+            ['ans_content' => 'parce que cest bien 2', 'video_path' => "path",'users_id' => 3, 'questions_id' => 2, 'answer_id' => 2],
+            ['ans_content' => 'renseigne toi sur les bases', 'video_path' => "path",'users_id' => 2, 'questions_id' => 3, 'answer_id' => null],
         ];
 
         DB::table('answers')->insert($answers);

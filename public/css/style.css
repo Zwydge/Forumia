@@ -136,7 +136,6 @@ nav .nav-item.dropdown.show .dropdown-menu a{
 }
 .center_actus {
     width: 60%;
-    background-color: #511281;
     padding: 15px;
     border-radius: 10px;
 }
@@ -153,11 +152,15 @@ nav .nav-item.dropdown.show .dropdown-menu a{
     color: #fff;
     transition: .3s;
 }
+.actus_elem fieldset{
+    background-color: #511281;
+}
 .actus_list {
     padding: 10px;
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 25px;
 }
 .content_question {
     display: flex;
