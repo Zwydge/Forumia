@@ -15,9 +15,12 @@ class QuestionController extends Controller
         return view('pages.questions');
     }
 
-    public function one_question()
+    public function one_question(Request $request)
     {
-        return view('pages.one_question');
+        $question = Questions::findOrFail($request->get("id", 1));
+        return view('pages.one_question', [
+            'question' => $question
+        ]);
     }
 
     public function ask_question()

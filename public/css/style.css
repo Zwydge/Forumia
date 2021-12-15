@@ -225,6 +225,10 @@ span.number_stat {
     position: relative;
     transition: .3s;
 }
+.actus_elem:hover {
+    text-decoration: none;
+    cursor:pointer;
+}
 .right_domains {
     background-color: #ffffff21;
     border-radius: 15px;
