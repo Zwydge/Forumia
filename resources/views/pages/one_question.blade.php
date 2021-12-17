@@ -8,7 +8,7 @@
                 <div class="authorname">Kévin</div>
             </div>
             <div class="right_question_content">
-                <div class="content_quest">Content question test de question bla bla ?</div>
+                <div class="content_quest">{{ dd($question) }}</div>
             </div>
         </div>
         <div class="content_answers">
