@@ -1,5 +1,5 @@
 html, body {
-    background-color: #21094e;
+    background-color: #19073a;
     font-family: 'Nunito', sans-serif;
     font-weight: 200;
     height: 100vh;
@@ -103,21 +103,20 @@ nav .nav-item.dropdown.show .dropdown-menu a{
     margin:0;
 }
 .left_account_col {
-    background-color: #ffffff21;
-    border-radius: 15px;
-    border: 4px solid #860b9c;
+    background-color: transparent;
+    border-radius: 0px;
+    border: 0px solid #860b9c;
     width: 20%;
-    height:auto;
-    clip-path: polygon(0 0, 88% 10%, 87% 88%, 0% 100%);
-    -webkit-box-shadow: 12px 0px 15px -2px rgb(170 11 159 / 49%);
-    box-shadow: 12px 10px 15px -2px rgb(170 11 159 / 49%);
-    padding: 40px 30px 40px 0px;
+    height: auto;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: 3s linear 1s infinite alternate animateBorder;
 }
 @keyframes animateBorder {
     from { border: 4px solid #ac07cb; }
@@ -127,7 +126,7 @@ nav .nav-item.dropdown.show .dropdown-menu a{
     width:50px;
     height:50px;
     border-radius: 50px;
-    border:2px solid #b76bee;
+    border:0px solid #fff;
     cursor:pointer;
 }
 .content_question .avatar_img img{
@@ -135,9 +134,10 @@ nav .nav-item.dropdown.show .dropdown-menu a{
     height:30px;
 }
 .center_actus {
-    width: 60%;
+    width: 80%;
     padding: 15px;
     border-radius: 10px;
+    margin-left: 20%;
 }
 .domains_list.domain_css {
     display: flex;
@@ -153,7 +153,8 @@ nav .nav-item.dropdown.show .dropdown-menu a{
     transition: .3s;
 }
 .actus_elem fieldset{
-    background-color: #511281;
+    background-color: #31104a;
+    position: relative;
 }
 .actus_list {
     padding: 10px;
@@ -171,8 +172,8 @@ nav .nav-item.dropdown.show .dropdown-menu a{
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 0px;
-    left: -4px;
+    top: -10px;
+    left: -10px;
 }
 .right_question_ask {
     display: flex;
@@ -181,6 +182,7 @@ nav .nav-item.dropdown.show .dropdown-menu a{
     align-items: baseline;
     padding: 4px;
     width: 100%;
+    margin-top: 20px;
     position: relative;
 }
 .author {
@@ -191,9 +193,8 @@ nav .nav-item.dropdown.show .dropdown-menu a{
     transition: .3s;
 }
 .actus_elem fieldset {
-    border: 1px solid white;
+    border: 0px solid white;
     padding: 10px;
-    border-radius: 4px;
 }
 .actus_elem legend {
     width: auto;
@@ -348,4 +349,15 @@ span.number_stat {
 .domains_list.domain_css > div[enable=enable]{
     background-color: #fff;
     color: #511281;
+}
+.abso_img_domain {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 5px;
+    right: 5px;
+}
+.abso_img_domain img {
+    width: 100%;
+    height: 100%;
 }
