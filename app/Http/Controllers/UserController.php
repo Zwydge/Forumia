@@ -5,11 +5,7 @@ namespace App\Http\Controllers;
 use App\Roles;
 use App\User;
 use Response;
-<<<<<<< HEAD
 use Illuminate\Http\Request;
-=======
-se Illuminate\Http\Request;
->>>>>>> 8941bb2733aa58a88ad7dcff5af2d17244cc0420
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 

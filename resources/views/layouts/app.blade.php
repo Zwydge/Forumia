@@ -89,23 +89,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 8920e49 (account management page creation and data update)
->>>>>>> 8941bb2733aa58a88ad7dcff5af2d17244cc0420
-                                    <a class="dropdown-item" href="">
-                                        Mon compte
-                                    </a>
-
-<<<<<<< HEAD
-=======
->>>>>>> 543d51d (account management page creation and data update)
-=======
->>>>>>> 8941bb2733aa58a88ad7dcff5af2d17244cc0420
                                     <a class="dropdown-item" href="{{ route('user') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('acount-form').submit();">
@@ -116,15 +100,6 @@
                                         @csrf
                                     </form>
 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 543d51d (account management page creation and data update)
-=======
->>>>>>> 53c4cfb ( minor fix)
-=======
->>>>>>> 8941bb2733aa58a88ad7dcff5af2d17244cc0420
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
