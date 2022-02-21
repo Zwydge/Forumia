@@ -46,7 +46,7 @@ class UserController extends Controller
         $user->save();
 
         $role = Roles::select()->where('id', Auth::user()->roles_id)->first();
-      
+
         //return Response::json(['avatar' => $avatar, 'user' => $user], 200);
         return view('main/account', ['role' => $role->name], ['name' => $user->name]);
     }

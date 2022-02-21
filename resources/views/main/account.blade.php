@@ -13,8 +13,12 @@
             <br>
             <form id="acount-update-form" action="{{ route('userupdate') }}" method="POST">
                 <div class="col-md-6">
+<<<<<<< HEAD
 
 
+=======
+                    <img id="output_img_{{ Auth::user()->id }}" class="userManagement_avatar" src="{{ asset('/media/avatar/'.Auth::user()->avatar) }}">
+>>>>>>> f0142e3 (avatar support and minor fix)
                     {{ __('Username : ') }}
             <input name= "username" value = "{{ $name }}"/>
                 </div>
