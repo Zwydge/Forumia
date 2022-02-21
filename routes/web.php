@@ -47,7 +47,3 @@ Route::get('/user', 'UserController@display')->name('user');
 
 // Route qui update les informations de compte
 Route::post('/userupdate', 'UserController@update')->name('userupdate');
-<<<<<<< HEAD
->>>>>>> 8920e49 (account management page creation and data update)
-=======
->>>>>>> 8941bb2733aa58a88ad7dcff5af2d17244cc0420
