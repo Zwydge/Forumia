@@ -28,6 +28,7 @@ class HomeController extends Controller
     {
         $domains = Domains::all();
         $questions = DB::table('questions')
+            ->select('questions.id as id', 'domains.label as label', 'questions.content as content', 'users.id as user_id', 'users.name as name')
             ->join('domains', 'domains.id', '=', 'questions.domains_id')
             ->join('users', 'users.id', '=', 'questions.users_id')
             ->get();

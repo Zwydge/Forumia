@@ -39,9 +39,11 @@
         </div>
         <div class="actus_list">
             @foreach ($questions as $question)
-            <div class="actus_elem" data-groups='["{{$question->label}}"]' data-date-created="2016-08-12">
+            <a href="{{route('question', ["id" => $question->id])}}" class="actus_elem" data-groups='["{{$question->label}}"]' data-date-created="2016-08-12">
                 <fieldset>
-                    <legend>{{ $question->label }}</legend>
+                    <div class="abso_img_domain">
+                        <img src="{{ asset("media/img/domains/".$question->label.".png") }}" alt="">
+                    </div>
                     <div class="content_question">
                         <div class="left_avatar_ask avatar_img">
                             <img src="{{asset("media/img/avatar/zwedge.jpg")}}" alt="">
@@ -66,22 +68,8 @@
                         </div>
                     </div>
                 </fieldset>
-            </div>
+            </a>
             @endforeach
-        </div>
-    </div>
-    <div class="right_domains domain_css">
-        <div class="elem_right_domain">
-            <img src="{{ asset("media/img/domains/animals.png") }}" alt="">
-        </div>
-        <div class="elem_right_domain">
-            <img src="{{ asset("media/img/domains/animals.png") }}" alt="">
-        </div>
-        <div class="elem_right_domain">
-            <img src="{{ asset("media/img/domains/animals.png") }}" alt="">
-        </div>
-        <div class="elem_right_domain">
-            <img src="{{ asset("media/img/domains/animals.png") }}" alt="">
         </div>
     </div>
 </div>

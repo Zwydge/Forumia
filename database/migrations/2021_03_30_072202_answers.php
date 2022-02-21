@@ -15,12 +15,16 @@ class Answers extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('content');
-            $table->string('video_path')->nullable();;
+            $table->text('ans_content');
+            $table->string('video_path')->nullable();
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id')->references('id')->on('users');
+            $table->integer('answer_id')->unsigned()->nullable();
+            $table->foreign('answer_id')->references('id')->on('answers');
             $table->integer('questions_id')->unsigned();
             $table->foreign('questions_id')->references('id')->on('questions');
+            $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime('updated_at')->nullable();
         });
     }
 
