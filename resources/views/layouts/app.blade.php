@@ -106,10 +106,12 @@
                                         @csrf
                                     </form>
 
-<<<<<<< HEAD
 
+<<<<<<< HEAD
 =======
 >>>>>>> 543d51d (account management page creation and data update)
+=======
+>>>>>>> 53c4cfb ( minor fix)
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
