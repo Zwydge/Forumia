@@ -81,6 +81,7 @@ input.search_bar::placeholder {
     display: none;
 }
 
+
 .content .title{
     color:#fff;
 }
@@ -267,6 +268,7 @@ span.number_stat {
     width: 25px;
     margin-right: 10px;
 }
+<<<<<<< HEAD
 .checkbox_domains input {
     display: none;
 }
@@ -376,4 +378,8 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
 }
 .right_question_ask .question {
     word-break: break-word;
+=======
+.card-body {
+    background-color: #511281;
+>>>>>>> 972836c (account management page creation and data update)
 }
