@@ -80,6 +80,7 @@ input.search_bar::placeholder {
 .ui-helper-hidden-accessible {
     display: none;
 }
+<<<<<<< HEAD
 
 
 .content .title{
@@ -387,4 +388,8 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
 .card-body {
     background-color: #511281;
 >>>>>>> 8920e49 (account management page creation and data update)
+=======
+.card-body{
+    background-color: #511281;
+>>>>>>> 543d51d (account management page creation and data update)
 }

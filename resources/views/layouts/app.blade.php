@@ -88,11 +88,14 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+<<<<<<< HEAD
 
                                     <a class="dropdown-item" href="">
                                         Mon compte
                                     </a>
 
+=======
+>>>>>>> 543d51d (account management page creation and data update)
                                     <a class="dropdown-item" href="{{ route('user') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('acount-form').submit();">
@@ -103,7 +106,10 @@
                                         @csrf
                                     </form>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 543d51d (account management page creation and data update)
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -28,6 +28,7 @@ Route::get('locale', 'LocalizationController@getLang')->name('getlang');
 Route::get('locale/{lang}', 'LocalizationController@setLang')->name('setlang');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // QUESTIONS
 Route::get('/questions', 'QuestionController@index')->name('questions');
 Route::get('/question', 'QuestionController@one_question')->name('question');
@@ -42,9 +43,14 @@ Route::get('/answers', 'AnswerController@index')->name('answers');
 Route::get('/domains', 'DomainController@index')->name('domains');
 Route::get('/mydomains', 'DomainController@my_domains')->name('mydomains');
 =======
+=======
+>>>>>>> 543d51d (account management page creation and data update)
 // Route qui renvoie vers la page de gestion de compte
 Route::get('/user', 'UserController@display')->name('user');
 
 // Route qui update les informations de compte
 Route::post('/userupdate', 'UserController@update')->name('userupdate');
+<<<<<<< HEAD
 >>>>>>> 8920e49 (account management page creation and data update)
+=======
+>>>>>>> 543d51d (account management page creation and data update)

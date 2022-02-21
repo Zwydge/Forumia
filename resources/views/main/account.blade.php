@@ -13,9 +13,12 @@
             <form id="acount-update-form" action="{{ route('userupdate') }}" method="POST">
                 <div class="col-md-6">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <img id="output_img_{{ Auth::user()->id }}" class="userManagement_avatar" src="{{ asset('/media/avatar/'.Auth::user()->avatar) }}">
 =======
 >>>>>>> 8920e49 (account management page creation and data update)
+=======
+>>>>>>> 543d51d (account management page creation and data update)
                     {{ __('Username : ') }}
             <input name= "username" value = "{{ Auth::user()->name }}"/>
                 </div>

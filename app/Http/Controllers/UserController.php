@@ -17,6 +17,7 @@ class UserController extends Controller
         return view('main/account', ['role' => $role -> name]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
 
         public function update(Request $request)
@@ -50,6 +51,10 @@ class UserController extends Controller
 =======
     }
 
+=======
+    }
+
+>>>>>>> 543d51d (account management page creation and data update)
         public function update(Request $request)
         {
             $input = $request->all();
@@ -76,5 +81,8 @@ class UserController extends Controller
             return response()->json(['message' => $user], 200,['data' => $user]);
     }
 
+<<<<<<< HEAD
 >>>>>>> 8920e49 (account management page creation and data update)
+=======
+>>>>>>> 543d51d (account management page creation and data update)
 }

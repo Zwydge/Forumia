@@ -9,10 +9,14 @@ class User extends Authenticatable
 {
     use \Illuminate\Notifications\Notifiable;
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected $fillable = array('id','name', 'username', 'email', 'password', 'roles_id', 'avatar');
 =======
     protected $fillable = array('id','name', 'username', 'email', 'password', 'roles_id');
 >>>>>>> 8920e49 (account management page creation and data update)
+=======
+    protected $fillable = array('id','name', 'username', 'email', 'password', 'roles_id');
+>>>>>>> 543d51d (account management page creation and data update)
 
     public function reputations()
     {
