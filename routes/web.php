@@ -29,6 +29,10 @@ Route::get('locale/{lang}', 'LocalizationController@setLang')->name('setlang');
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8941bb2733aa58a88ad7dcff5af2d17244cc0420
 // QUESTIONS
 Route::get('/questions', 'QuestionController@index')->name('questions');
 Route::get('/question', 'QuestionController@one_question')->name('question');
@@ -42,15 +46,22 @@ Route::get('/answers', 'AnswerController@index')->name('answers');
 //DOMAINS
 Route::get('/domains', 'DomainController@index')->name('domains');
 Route::get('/mydomains', 'DomainController@my_domains')->name('mydomains');
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 543d51d (account management page creation and data update)
+=======
+
+>>>>>>> 8941bb2733aa58a88ad7dcff5af2d17244cc0420
 // Route qui renvoie vers la page de gestion de compte
 Route::get('/user', 'UserController@display')->name('user');
 
 // Route qui update les informations de compte
 Route::post('/userupdate', 'UserController@update')->name('userupdate');
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 8920e49 (account management page creation and data update)
 =======
 >>>>>>> 543d51d (account management page creation and data update)
+=======
+>>>>>>> 8941bb2733aa58a88ad7dcff5af2d17244cc0420
