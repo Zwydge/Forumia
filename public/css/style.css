@@ -269,6 +269,7 @@ span.number_stat {
     margin-right: 10px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .checkbox_domains input {
     display: none;
 }
@@ -382,4 +383,8 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
 .card-body {
     background-color: #511281;
 >>>>>>> 972836c (account management page creation and data update)
+=======
+.card-body {
+    background-color: #511281;
+>>>>>>> 8920e49 (account management page creation and data update)
 }
