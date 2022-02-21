@@ -15,8 +15,8 @@ class UserController extends Controller
     {
 
         $role = Roles::select()->where('id', Auth::user()->roles_id)->first();
-
-        return view('main/account', ['role' => $role->name]);
+        $user = User::select()->where('id', Auth::user()->id)->first();
+        return view('main/account', ['role' => $role->name], ['name' => $user->name]);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -84,10 +84,16 @@ class UserController extends Controller
             $user->save();
 =======
         $role = Roles::select()->where('id', Auth::user()->roles_id)->first();
+<<<<<<< HEAD
 >>>>>>> 53c4cfb ( minor fix)
 
         return Response::json(['avatar' => $avatar, 'user' => $user], 200);
         return view('main/account', ['role' => $role->name]);
+=======
+      
+        //return Response::json(['avatar' => $avatar, 'user' => $user], 200);
+        return view('main/account', ['role' => $role->name], ['name' => $user->name]);
+>>>>>>> 8a6b01d (Correction actualisation bug)
     }
 
 <<<<<<< HEAD

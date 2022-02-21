@@ -26,7 +26,7 @@
 
 >>>>>>> ea148fc (minor fix on avatar uploading)
                     {{ __('Username : ') }}
-            <input name= "username" value = "{{ Auth::user()->name }}"/>
+            <input name= "username" value = "{{ $name }}"/>
                 </div>
                 <br>
                     <div class="col-md-6">
