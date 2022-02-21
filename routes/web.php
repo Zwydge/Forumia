@@ -45,4 +45,3 @@ Route::get('/user', 'UserController@display')->name('user');
 
 // Route qui update les informations de compte
 Route::post('/userupdate', 'UserController@update')->name('userupdate');
-

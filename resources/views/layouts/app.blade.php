@@ -88,7 +88,10 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8920e49 (account management page creation and data update)
                                     <a class="dropdown-item" href="">
                                         Mon compte
                                     </a>
