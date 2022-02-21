@@ -7,7 +7,7 @@
         </div>
         <div class="container_search_bar">
             <form id="ask-form" action="{{ route('createquest') }}" method="POST">
-                <input placeholder="{{ __('Posez votre question') }}" name="question" class="search_bar" type="text">
+                <textarea placeholder="{{ __('Posez votre question') }}" name="question" class="search_bar" type="text"></textarea>
                 <div class="checkbox_domains">
                     @foreach($domains as $domain)
                         <input type="radio" name="domains" value="{{ $domain['id'] }}" id="domain_{{ $domain['id'] }}">
