@@ -361,3 +361,19 @@ span.number_stat {
     width: 100%;
     height: 100%;
 }
+textarea.search_bar.ui-autocomplete-input {
+    width: 50%;
+    background-color: transparent;
+    border: none;
+    color:#fff;
+    font-size: 30px;
+    height: 100px;
+    padding:10px;
+}
+
+textarea.search_bar.ui-autocomplete-input::placeholder {
+    color:#fff;
+}
+.right_question_ask .question {
+    word-break: break-word;
+}

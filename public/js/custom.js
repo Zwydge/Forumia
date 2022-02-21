@@ -19,8 +19,24 @@ $( document ).ready(function() {
             }
         });
 
-        $( ".search_bar" ).autocomplete({
+        $(".search_bar").autocomplete({
             source: availableTags
+        });
+        $(".search_bar").on('input', function() {
+            var question = $('.search_bar').val();
+            console.log(question.length);
+            if(question.length < 50) {
+                $(".search_bar").css("fontSize", "30px");
+            }
+            else if(question.length > 50 && question.length < 75) {
+                $(".search_bar").css("fontSize", "20px");
+            }
+            else if(question.length > 75 && question.length < 90) {
+                $(".search_bar").css("fontSize", "15px");
+            }
+            else if(question.length > 90) {
+
+            }
         });
 
     });
@@ -95,4 +111,9 @@ $( document ).ready(function() {
         console.log(cat_arr);
         shuffleInstance.filter(cat_arr);
     })
+
+    var textid = $('.question');
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    $('.question').innerHTML = textid.replace(exp,"<a href='$1'>$1</a>");
+
 });
