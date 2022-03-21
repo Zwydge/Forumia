@@ -11,6 +11,10 @@ html, body {
     height: 100vh;
 }
 
+textarea, input {
+    outline: none !important;
+}
+
 .flex-center {
     align-items: center;
     display: flex;
@@ -166,6 +170,9 @@ nav .nav-item.dropdown.show .dropdown-menu a{
 .content_question {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
 }
 .left_avatar_ask.avatar_img {
     display: flex;
@@ -376,4 +383,117 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
 }
 .right_question_ask .question {
     word-break: break-word;
+}
+.left_author_quest img {
+    width: 150px;
+    border-radius: 100px;
+}
+.left_author_quest .authorname {
+    font-size: 30px;
+}
+.left_author_quest {
+    width: 20%;
+}
+.right_question_content {
+    width: 70%;
+}
+.content_quest {
+    text-align: initial;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 40px;
+    border-left: 2px solid #fff;
+    padding-left: 30px;
+    padding-right: 50px;
+}
+.content_answers {
+    color: #fff;
+    width: 85%;
+    margin: 50px auto 0 auto;
+}
+.title_answers {
+    text-align: left;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.left_ans img {
+    width: 50px;
+    border-radius: 100px;
+}
+.one_answers {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+.content_ans {
+    margin-left: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    border-left: 1px solid #fff;
+}
+.left_ans {
+    width: 5%;
+}
+.answer_spe {
+    display: flex;
+    flex-direction: row;
+}
+.left_spe img {
+    width: 35px;
+    border-radius: 100px;
+}
+.anthor_spe {
+    font-size: 11px;
+}
+.content_spe{
+    margin-left: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    border-left: 1px solid #fff;
+}
+.answer_spe {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    position: relative;
+}
+.leave_comment {
+    display: flex;
+    color: #fff;
+    width: 85%;
+    margin: 60px auto 60px auto;
+    justify-content: left;
+}
+.left_comment img {
+    width: 80px;
+    border-radius: 100px;
+}
+.right_comment textarea {
+    background-color: transparent;
+    border: none;
+    resize: vertical;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    color:#fff;
+    padding:5px;
+    font-size: 18px;
+}
+.right_comment textarea:focus {
+    border: none;
+    border-bottom: 1px solid #fff;
+}
+.right_comment {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-left: 40px;
+}
+.left_comment {
+    width: 10%;
+}
+.send_comment {
+    margin-top: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
 }
