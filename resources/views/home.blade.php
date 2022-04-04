@@ -6,7 +6,7 @@
         <div class="avatar avatar_img">
             <img src="{{asset("media/img/avatar/zwedge.jpg")}}" alt="">
         </div>
-        <div class="name">Zwedge</div>
+        <div class="name">{{ auth()->user()->name }}</div>
         <div class="action_menu">
             <a href="" class="edit_account">
                 <img src="{{ asset("media/img/tech/user.png") }}" alt="">
@@ -33,43 +33,10 @@
     </div>
     <div class="center_actus">
         <div class="domains_list domain_css">
-            @foreach($domains as $domain)
-                <div class="domain_btn" enable="disable" domain-id="{{ $domain['label'] }}">{{ $domain['label'] }}</div>
-            @endforeach
+            @include('layouts.domains', ['domains' => $domains])
         </div>
         <div class="actus_list">
-            @foreach ($questions as $question)
-            <a href="{{route('question', ["id" => $question->id])}}" class="actus_elem" data-groups='["{{$question->label}}"]' data-date-created="2016-08-12">
-                <fieldset>
-                    <div class="abso_img_domain">
-                        <img src="{{ asset("media/img/domains/".$question->label.".png") }}" alt="">
-                    </div>
-                    <div class="content_question">
-                        <div class="left_avatar_ask avatar_img">
-                            <img src="{{asset("media/img/avatar/zwedge.jpg")}}" alt="">
-                        </div>
-                        <div class="right_question_ask">
-                            <div class="question">{{ $question->content }}</div>
-                            <div class="author">{{$question->name}}</div>
-                        </div>
-                    </div>
-                    <div class="content_actions">
-                        <div class="action_elem">
-                            <img src="{{asset("media/img/tech/view.png")}}" alt="">
-                            <span class="number_stat">457</span>
-                        </div>
-                        <div class="action_elem">
-                            <img src="{{asset("media/img/tech/comment.png")}}" alt="">
-                            <span class="number_stat">47</span>
-                        </div>
-                        <div class="action_elem">
-                            <img src="{{asset("media/img/tech/like.png")}}" alt="">
-                            <span class="number_stat">19</span>
-                        </div>
-                    </div>
-                </fieldset>
-            </a>
-            @endforeach
+            @include('layouts.questions', ['questions' => $questions])
         </div>
     </div>
 </div>
