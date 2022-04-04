@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('main.accueil');
-});
-
+Route::get('/', 'QuestionController@search')->name('search');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -31,7 +28,7 @@ Route::get('locale/{lang}', 'LocalizationController@setLang')->name('setlang');
 Route::get('/questions', 'QuestionController@index')->name('questions');
 Route::get('/question', 'QuestionController@one_question')->name('question');
 Route::get('/ask', 'QuestionController@ask_question')->name('ask');
-Route::get('/myquestions', 'QuestionController@my_questions')->name('myquestions');
+Route::get('/myquestions', 'QuestionController@myQuestions')->name('myquestions');
 Route::post('/create_quest', 'QuestionController@create')->name('createquest');
 
 // ANSWERS

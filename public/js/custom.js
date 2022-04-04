@@ -24,7 +24,6 @@ $( document ).ready(function() {
         });
         $(".search_bar").on('input', function() {
             var question = $('.search_bar').val();
-            console.log(question.length);
             if(question.length < 50) {
                 $(".search_bar").css("fontSize", "30px");
             }
@@ -112,8 +111,19 @@ $( document ).ready(function() {
         shuffleInstance.filter(cat_arr);
     })
 
-    var textid = $('.question');
-    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    $('.question').innerHTML = textid.replace(exp,"<a href='$1'>$1</a>");
+    /* SEARCH */
+
+    $(".container_search_bar .search_bar").on("keyup change", function(e) {
+        var word = $(".container_search_bar .search_bar").val().toLowerCase();
+        console.log(word);
+
+        shuffleInstance.filter((element, shuffle) => {
+            const titleElement = element.querySelector('.right_question_ask .question');
+            const titleText = titleElement.textContent.toLowerCase().trim();
+
+            return titleText.indexOf(word) !== -1;
+        });
+    })
+
 
 });

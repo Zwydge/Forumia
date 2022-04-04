@@ -497,3 +497,29 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
     cursor: pointer;
     text-transform: uppercase;
 }
+.result_part {
+    text-align: center;
+    margin-top: 100px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.title_page {
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+}
+.container_search_bar.myquestion_bar, .container_search_bar.accueil_bar {
+    width: 90%;
+    margin: 30px auto 0;
+}
+.container_search_bar.myquestion_bar input, .container_search_bar.accueil_bar input {
+    width: 100%;
+}
+.domains_list.domain_css.domain_myquestions, .domains_list.domain_css.accueil_domains {
+    width: 90%;
+    margin: 20px auto 0;
+}
+.result_part {
+    margin-top: 50px;
+}

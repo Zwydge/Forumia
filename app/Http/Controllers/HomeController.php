@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Answers;
 use App\Domains;
 use App\Questions;
 use Illuminate\Http\Request;
@@ -27,14 +28,17 @@ class HomeController extends Controller
     public function index()
     {
         $domains = Domains::all();
+        $answers = Answers::all();
         $questions = DB::table('questions')
-            ->select('questions.id as id', 'domains.label as label', 'questions.content as content', 'users.id as user_id', 'users.name as name')
+            ->select('questions.views as views', 'questions.id as id', 'domains.label as label', 'questions.content as content', 'users.id as user_id', 'users.name as name')
             ->join('domains', 'domains.id', '=', 'questions.domains_id')
             ->join('users', 'users.id', '=', 'questions.users_id')
             ->get();
         return view('home',[
             'questions' => $questions,
-            'domains' => $domains
+            'domains' => $domains,
+            'answers' => $answers,
+            'nb'=> 0
         ]);
     }
 }
