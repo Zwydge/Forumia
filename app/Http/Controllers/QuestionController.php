@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Answers;
 use App\Domains;
 use App\Questions;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,10 @@ class QuestionController extends Controller
 
     public function one_question(Request $request)
     {
+
+        $question = Questions::find($request->get("id", 1));
+        $question->increment('views');
+
         $question = DB::table('questions')
             ->select('questions.content', 'users.name', 'domains.label')
             ->where('questions.id', $request->get("id", 1))
@@ -44,10 +49,6 @@ class QuestionController extends Controller
         return view('pages.askquestion',['domains' => $domains]);
     }
 
-    public function my_questions()
-    {
-        return view('pages.myquestions');
-    }
 
     public function create(Request $request)
     {
@@ -68,5 +69,41 @@ class QuestionController extends Controller
         return Response::json([
             'questions' => $question
         ], 200); // Status code here
+    }
+
+    public function search()
+    {
+        $domains = Domains::all();
+        $answers = Answers::all();
+        $questions = DB::table('questions')
+            ->select('questions.views as views','questions.id as id', 'domains.label as label', 'questions.content as content', 'users.id as user_id', 'users.name as name')
+            ->join('domains', 'domains.id', '=', 'questions.domains_id')
+            ->join('users', 'users.id', '=', 'questions.users_id')
+            ->get();
+        return view('main.accueil',[
+            'questions' => $questions,
+            'domains' => $domains,
+            'answers' => $answers,
+            'nb'=> 0
+        ]);
+    }
+
+    public function myQuestions()
+    {
+        $domains = Domains::all();
+        $answers = Answers::all();
+        $questions = DB::table('questions')
+            ->select('questions.views as views', 'questions.id as id', 'domains.label as label', 'questions.content as content', 'users.id as user_id', 'users.name as name')
+            ->where('users.id', '=', auth()->user()->id)
+            ->join('domains', 'domains.id', '=', 'questions.domains_id')
+            ->join('users', 'users.id', '=', 'questions.users_id')
+            ->join('answers', 'answers.questions_id', '=', 'questions.id')
+            ->get();
+        return view('pages.myquestions',[
+            'questions' => $questions,
+            'domains' => $domains,
+            'answers' => $answers,
+            'nb'=> 0
+        ]);
     }
 }

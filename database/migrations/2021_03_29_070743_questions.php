@@ -18,6 +18,7 @@ class Questions extends Migration
             $table->increments('id');
             $table->text('content');
             $table->string('video_path')->nullable();
+            $table->integer('views')->default(0);
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id')->references('id')->on('users');
             $table->integer('domains_id')->unsigned();
