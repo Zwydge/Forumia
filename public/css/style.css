@@ -84,6 +84,9 @@ input.search_bar::placeholder {
 .ui-helper-hidden-accessible {
     display: none;
 }
+<<<<<<< HEAD
+
+
 
 .content .title{
     color:#fff;
@@ -274,6 +277,8 @@ span.number_stat {
     width: 25px;
     margin-right: 10px;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
 .checkbox_domains input {
     display: none;
 }
@@ -383,6 +388,18 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
 }
 .right_question_ask .question {
     word-break: break-word;
+=======
+.card-body {
+    background-color: #511281;
+>>>>>>> 972836c (account management page creation and data update)
+=======
+.card-body {
+    background-color: #511281;
+>>>>>>> 8920e49 (account management page creation and data update)
+=======
+.card-body{
+    background-color: #511281;
+>>>>>>> 543d51d (account management page creation and data update)
 }
 .left_author_quest img {
     width: 150px;
