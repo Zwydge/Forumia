@@ -16,9 +16,33 @@ class DatabaseSeeder extends Seeder
             ['label' => 'Film'],
             ['label' => 'Astronomie'],
             ['label' => 'Automobile'],
-            ['label' => 'Développement'],
             ['label' => 'Cuisine'],
-            ['label' => 'Science'],
+            ['label' => 'Jardinage'],
+            ['label' => 'Sport'],
+            ['label' => 'Langues'],
+            ['label' => 'Bâtiments'],
+            ['label' => 'Boulangerie'],
+            ['label' => 'Psychologie'],
+            ['label' => 'Informatique'],
+            ['label' => 'Art'],
+            ['label' => 'Histoire'],
+            ['label' => 'Géographie'],
+            ['label' => 'Phylosophie'],
+            ['label' => 'Mathématiques'],
+            ['label' => 'Electricité'],
+            ['label' => 'Physique/Chimie'],
+            ['label' => 'Argent'],
+            ['label' => 'Restauration'],
+            ['label' => 'Agriculture'],
+            ['label' => 'Religion'],
+            ['label' => 'Commerce'],
+            ['label' => 'Presse'],
+            ['label' => 'Santé'],
+            ['label' => 'Mode'],
+            ['label' => 'Communication'],
+            ['label' => 'Jeux-Vidéos'],
+            ['label' => 'Logistiques'],
+            ['label' => 'Sciences'],
         ];
 
         DB::table('domains')->insert($domains);
@@ -81,25 +105,5 @@ class DatabaseSeeder extends Seeder
 
         DB::table('answers')->insert($answers);
 
-        //$tickets = [
-        //    ['type' => 'Problème sur une réponse ou réponse manquante', 'email' => 'paul.chombart@gmail.com', 'content'=> 'il manque la réponse LOTR pour la musique du seigneur des anneaux'],
-        //    ['type' => 'Problème sur une musique/un son', 'email' => 'anthony.moutonnet@gmail.com', 'content'=> 'le cri de lelephant est dans le type son, il devrait etre dans animaux' ],
-        //    ['type' => 'Problème sur une réponse ou réponse manquante', 'email' => 'kevin.nochelsky@gmail.com', 'content'=> 'la réponse SOY marche pour shape of you, cest un peu abusé je trouve'],
-        //];
-
-        //DB::table('ticket')->insert($tickets);
-
-       // $reports = [
-        //    ['type' => 'Pseudo offenssant/innaproprié', 'content' => 'il aime pas jujutsu', 'for_user'=> 2, 'made_by' => 4],
-        //    ['type' => 'Comportement toxique', 'content' => 'il a pété (toxique le jeu de mot tmtc)', 'for_user'=> 2, 'made_by' => 3],
-        //];
-
-        //DB::table('report')->insert($reports);
-
-        //$news = [
-        //    ['content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit lorem scelerisque, lobortis magna non, dictum nunc. Aliquam eleifend lacinia nunc eu blandit. Praesent fermentum urna eu ex dapibus, sed fermentum turpis vestibulum. Curabitur congue sem dapibus, vehicula ex eleifend, placerat erat. Mauris efficitur risus quis nulla mattis elementum. Maecenas vehicula libero eget purus maximus, ut condimentum mi egestas. Etiam at odio at purus pretium venenatis ac id lorem.Fusce sed eleifend purus. Phasellus magna dolor, efficitur at sem fermentum, sagittis posuere tortor. Suspendisse quis dui ex. Duis fringilla ex neque, vitae fermentum lacus mollis at. Aliquam vel lobortis nisl. Suspendisse potenti. Pellentesque quis dapibus arcu, sit amet maximus metus. Nunc vulputate, purus vitae condimentum tincidunt, sapien justo volutpat diam, vitae egestas justo mi et eros. Ut finibus neque et finibus pharetra. Quisque condimentum orci lorem, vulputate luctus nunc feugiat vel. Nam consequat augue augue, id vulputate est bibendum eget. Sed eget odio lacus.']
-        //];
-
-        //DB::table('news')->insert($news);
     }
 }

@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="content">
-        Domaines
+
     </div>
 @endsection
