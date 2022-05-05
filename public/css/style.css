@@ -136,6 +136,7 @@ nav .nav-item.dropdown.show .dropdown-menu a{
 .content_question .avatar_img img{
     width:30px;
     height:30px;
+    object-fit: cover;
 }
 .center_actus {
     width: 80%;
@@ -390,6 +391,8 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
 }
 .left_author_quest img {
     width: 120px;
+    height: 120px;
+    object-fit: cover;
     border-radius: 100px;
 }
 .left_author_quest .authorname {
@@ -422,6 +425,8 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
 }
 .left_ans img {
     width: 50px;
+    height:50px;
+    object-fit: cover;
     border-radius: 100px;
 }
 .one_answers {
@@ -470,6 +475,8 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
 }
 .left_comment img {
     width: 80px;
+    height: 80px;
+    object-fit: cover;
     border-radius: 100px;
 }
 .right_comment textarea {

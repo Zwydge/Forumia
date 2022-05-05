@@ -20,6 +20,9 @@ class QuestionController extends Controller
 
     public function one_question(Request $request)
     {
+        $question = Questions::find($request->get("id", 1));
+        $question->views = $question->views+1;
+        $question->save();
 
         $question = DB::table('questions')
             ->select('questions.content', 'users.name','questions.id', 'users.avatar','questions.video_path', 'domains.label')

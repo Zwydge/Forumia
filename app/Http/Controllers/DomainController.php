@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DomainController extends Controller
 {
@@ -11,9 +12,18 @@ class DomainController extends Controller
         return view('pages.domains');
     }
 
-    public function my_domains()
+    public function domains()
     {
-        return view('pages.mydomains');
+        $domains = DB::table('domains')
+            ->select(DB::raw('count(questions.id) as questions, label, SUM(questions.views) as views'))
+            ->join('questions', 'questions.domains_id', '=', 'domains.id')
+            ->groupBy('label')
+            ->orderBy('label', 'asc')
+            ->get();
+
+        return view('pages.domains',[
+            'domains' => $domains,
+        ]);
     }
 
 }

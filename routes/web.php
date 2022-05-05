@@ -36,7 +36,7 @@ Route::get('/answers', 'AnswerController@index')->name('answers');
 Route::post('/create-answer', 'AnswerController@create')->name('create-answer');
 
 //DOMAINS
-Route::get('/domains', 'DomainController@index')->name('domains');
+Route::get('/domains', 'DomainController@domains')->name('domains');
 Route::get('/mydomains', 'DomainController@my_domains')->name('mydomains');
 
 //COMPTE
