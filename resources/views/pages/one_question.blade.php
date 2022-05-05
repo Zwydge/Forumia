@@ -12,7 +12,7 @@
             </div>
             @if($question[0]->video_path && $question[0]->video_path != "path")
                 <div class="video_part-quest">
-                    <div class="video-infos">{{ $question[0]->name }} a ajouté une vidéo a sa question</div>
+                    <div class="video-infos">{{ $question[0]->name }} a ajouté une vidéo à sa question</div>
                     <video class="video_element_quest" controls src="{{asset("media/img/questions/".$question[0]->video_path)}}"></video>
                 </div>
             @endif
