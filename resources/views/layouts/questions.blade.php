@@ -1,4 +1,5 @@
 @foreach ($questions as $question)
+
     <a href="{{route('question', ["id" => $question->id])}}" class="actus_elem" data-groups='["{{$question->label}}"]' data-date-created="2016-08-12">
         <fieldset>
             <div class="abso_img_domain">
@@ -6,7 +7,7 @@
             </div>
             <div class="content_question">
                 <div class="left_avatar_ask avatar_img">
-                    <img src="{{asset("media/img/avatar/zwedge.jpg")}}" alt="">
+                    <img src="{{asset("media/img/avatar/".$question->user_avatar)}}" alt="">
                 </div>
                 <div class="right_question_ask">
                     <div class="question">{{ $question->content }}</div>

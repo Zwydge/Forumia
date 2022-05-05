@@ -4,7 +4,7 @@
     <div class="title_page">
         Mes questions
     </div>
-    {{ dd($questions) }}
+
     <div class="container_search_bar myquestion_bar">
         <input placeholder="{{ __('Chercher dans mes questions') }}" class="search_bar" type="text">
     </div>

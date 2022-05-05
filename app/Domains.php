@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Domains extends Model
 {
@@ -16,5 +17,13 @@ class Domains extends Model
     public function relations()
     {
         return $this->belongsToMany(Relations::class);
+    }
+
+    public function getDomains(){
+        $domains = DB::table('domains')
+            ->select('*')
+            ->orderBy('label', 'asc')
+            ->get();
+        return $domains;
     }
 }

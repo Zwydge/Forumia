@@ -164,12 +164,14 @@ nav .nav-item.dropdown.show .dropdown-menu a{
     padding: 10px;
     flex-direction: row;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 25px;
 }
 .content_question {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     color:#fff;
@@ -291,7 +293,7 @@ span.number_stat {
     border:2px solid #fff;
 }
 .checkbox_domains {
-    width: 50%;
+    width: 70%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -301,7 +303,7 @@ span.number_stat {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
 }
 .validation input {
@@ -331,11 +333,13 @@ span.number_stat {
     border-radius: 50px;
     padding: 1px 12px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 .domains_list.domain_css {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    width:95%;
     flex-wrap: wrap;
 }
 .actus_elem:hover fieldset{
@@ -369,7 +373,7 @@ span.number_stat {
     height: 100%;
 }
 textarea.search_bar.ui-autocomplete-input {
-    width: 50%;
+    width: 70%;
     background-color: transparent;
     border: none;
     color:#fff;
@@ -385,7 +389,7 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
     word-break: break-word;
 }
 .left_author_quest img {
-    width: 150px;
+    width: 120px;
     border-radius: 100px;
 }
 .left_author_quest .authorname {
@@ -482,8 +486,11 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
     border: none;
     border-bottom: 1px solid #fff;
 }
-.right_comment {
-    width: 75%;
+.right_comment{
+    width:100%;
+}
+.right_comment > form {
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -491,6 +498,10 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
 }
 .left_comment {
     width: 10%;
+}
+.right_comment input {
+    padding: 9px 25px;
+    font-weight: bold;
 }
 .send_comment {
     margin-top: 15px;
@@ -522,4 +533,97 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
 }
 .result_part {
     margin-top: 50px;
+}
+.scrolled-nav {
+    transition: 0.3s;
+    position: fixed;
+    width:100%;
+    top: 0;
+    z-index: 2;
+    left:0;
+}
+form.form-account {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form.form-account input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    margin-bottom: 16px;
+    font-size: 25px;
+}
+form.form-account input[type=submit] {
+    text-align: center;
+    background-color: white !important;
+    color: #511281 !important;
+    font-weight: bold;
+    width: 250px;
+    cursor: pointer;
+}
+#avatar {
+    height:0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.label_file img{
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    object-fit: cover;
+    margin-top: 20px;
+    border-radius: 100px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+label#label_video img {
+    width: 80px;
+    cursor: pointer;
+    margin-right: 50px;
+}
+form#ask-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input#video {
+    display: none;
+}
+.title_video {
+    font-size: 25px;
+    color: #fff;
+    text-align: left;
+    margin-top: 50px;
+    width: 70%;
+    padding-left: 10px;
+}
+label#label_video {
+    width: 70%;
+    display: flex;
+    margin-top: 20px;
+    padding: 10px;
+}
+.video_part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+video[src=""] {
+    display: none;
+}
+.video_part-quest {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.video-infos {
+    margin-bottom: 15px;
+    font-size: 20px;
 }

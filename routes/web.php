@@ -33,7 +33,12 @@ Route::post('/create_quest', 'QuestionController@create')->name('createquest');
 
 // ANSWERS
 Route::get('/answers', 'AnswerController@index')->name('answers');
+Route::post('/create-answer', 'AnswerController@create')->name('create-answer');
 
 //DOMAINS
 Route::get('/domains', 'DomainController@index')->name('domains');
 Route::get('/mydomains', 'DomainController@my_domains')->name('mydomains');
+
+//COMPTE
+Route::get('/account', 'UserController@my_account')->name('account');
+Route::post('/update-account', 'UserController@update')->name('update-account');

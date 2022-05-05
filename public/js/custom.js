@@ -125,5 +125,16 @@ $( document ).ready(function() {
         });
     })
 
+    //SCROLLING Event
+    /*$(window).scroll(function() {
+        var scrollTop = $(window).scrollTop();
+        if ( scrollTop >  65) {
+            $('.navbar').addClass("scrolled-nav");
+        }
+        else {
+            $('.navbar').removeClass("scrolled-nav");
+        }
+    });*/
+
 
 });

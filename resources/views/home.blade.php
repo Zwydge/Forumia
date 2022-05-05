@@ -4,11 +4,11 @@
 <div class="container home_container">
     <div class="left_account_col">
         <div class="avatar avatar_img">
-            <img src="{{asset("media/img/avatar/zwedge.jpg")}}" alt="">
+            <img src="{{asset("media/img/avatar/".auth()->user()->avatar)}}" alt="">
         </div>
         <div class="name">{{ auth()->user()->name }}</div>
         <div class="action_menu">
-            <a href="" class="edit_account">
+            <a href="{{route('account')}}" class="edit_account">
                 <img src="{{ asset("media/img/tech/user.png") }}" alt="">
                 Modifier mon compte
             </a>

@@ -27,10 +27,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $domains = Domains::all();
+        $domains = DB::table('domains')
+            ->select('*')
+            ->orderBy('label', 'asc')
+            ->get();
+
         $answers = Answers::all();
         $questions = DB::table('questions')
-            ->select('questions.views as views', 'questions.id as id', 'domains.label as label', 'questions.content as content', 'users.id as user_id', 'users.name as name')
+            ->select('questions.views as views', 'questions.id as id', 'domains.label as label', 'questions.content as content', 'users.id as user_id', 'users.avatar as user_avatar', 'users.name as name')
             ->join('domains', 'domains.id', '=', 'questions.domains_id')
             ->join('users', 'users.id', '=', 'questions.users_id')
             ->get();
