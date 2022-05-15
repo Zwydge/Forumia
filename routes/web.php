@@ -13,12 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('main/accueil');
-});
-
-Route::get('/home', 'UserController@display');
-
+Route::get('/', 'QuestionController@search')->name('search');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -28,3 +23,22 @@ Route::get('locale', 'LocalizationController@getLang')->name('getlang');
 
 // Route qui permet de modifier la langue
 Route::get('locale/{lang}', 'LocalizationController@setLang')->name('setlang');
+
+// QUESTIONS
+Route::get('/questions', 'QuestionController@index')->name('questions');
+Route::get('/question', 'QuestionController@one_question')->name('question');
+Route::get('/ask', 'QuestionController@ask_question')->name('ask');
+Route::get('/myquestions', 'QuestionController@myQuestions')->name('myquestions');
+Route::post('/create_quest', 'QuestionController@create')->name('createquest');
+
+// ANSWERS
+Route::get('/answers', 'AnswerController@index')->name('answers');
+Route::post('/create-answer', 'AnswerController@create')->name('create-answer');
+
+//DOMAINS
+Route::get('/domains', 'DomainController@domains')->name('domains');
+Route::get('/mydomains', 'DomainController@my_domains')->name('mydomains');
+
+//COMPTE
+Route::get('/account', 'UserController@my_account')->name('account');
+Route::post('/update-account', 'UserController@update')->name('update-account');

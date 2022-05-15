@@ -15,7 +15,7 @@ class Reputations extends Migration
     {
         Schema::create('reputations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('reputation');
+            $table->integer('reputation')->default(0);
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id')->references('id')->on('users');
             $table->integer('domains_id')->unsigned();

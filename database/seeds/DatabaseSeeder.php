@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,12 +13,36 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $domains = [
-            ['name' => 'Film'],
-            ['name' => 'Astronomie'],
-            ['name' => 'Automobile'],
-            ['name' => 'Développement'],
-            ['name' => 'Cuisine'],
-            ['name' => 'Science'],
+            ['label' => 'Film'],
+            ['label' => 'Astronomie'],
+            ['label' => 'Automobile'],
+            ['label' => 'Cuisine'],
+            ['label' => 'Jardinage'],
+            ['label' => 'Sport'],
+            ['label' => 'Langues'],
+            ['label' => 'Bâtiments'],
+            ['label' => 'Boulangerie'],
+            ['label' => 'Psychologie'],
+            ['label' => 'Informatique'],
+            ['label' => 'Art'],
+            ['label' => 'Histoire'],
+            ['label' => 'Géographie'],
+            ['label' => 'Phylosophie'],
+            ['label' => 'Mathématiques'],
+            ['label' => 'Electricité'],
+            ['label' => 'Physique/Chimie'],
+            ['label' => 'Argent'],
+            ['label' => 'Restauration'],
+            ['label' => 'Agriculture'],
+            ['label' => 'Religion'],
+            ['label' => 'Commerce'],
+            ['label' => 'Presse'],
+            ['label' => 'Santé'],
+            ['label' => 'Mode'],
+            ['label' => 'Communication'],
+            ['label' => 'Jeux-Vidéos'],
+            ['label' => 'Logistiques'],
+            ['label' => 'Sciences'],
         ];
 
         DB::table('domains')->insert($domains);
@@ -59,45 +84,44 @@ class DatabaseSeeder extends Seeder
                 'roles_id' => 1,
                 //'avatar' => "1/jhin (2).jpg",
             ],
+            [
+                'name' => 'Sebastien',
+                'password' => bcrypt('123456'),
+                'email' => 'seb@test.com',
+                'roles_id' => 1,
+                //'avatar' => "1/jhin (2).jpg",
+            ],
         ];
 
         DB::table('users')->insert($users);
 
         $questions = [
-            ['content' => 'Gneu gneu le soleil, il est chaud ???', 'video_path' => "path",'users_id' => 2, 'domains_id' => 2],
-            ['content' => 'Pourquoi jujutsu est top1, vente, animé, personnage, animation, combat ?', 'video_path' => "path",'users_id' => 4, 'domains_id' => 1],
-            ['content' => 'Comment développer en JAVA ?', 'video_path' => "path",'users_id' => 3, 'domains_id' => 4],
+            ['content' => 'Est-il vrai que l\'acteur dans John Wick réalise toutes ses cascades ?', 'video_path' => "path",'users_id' => 2, 'domains_id' => 1],
+            ['content' => 'Serait-il possible en théorie d\'habiter sur mars ?', 'video_path' => "path",'users_id' => 3, 'domains_id' => 2],
+            ['content' => 'Faut-il mieux prendre une voiture thermique ou éléctrique ?', 'video_path' => "path",'users_id' => 4, 'domains_id' => 3],
+            ['content' => 'Comment préparer un bon dessert en moins de 5 minutes ?', 'video_path' => "path",'users_id' => 5, 'domains_id' => 4],
+            ['content' => 'Comment se débarrasser des mauvaises herbes rapidement ?', 'video_path' => "path",'users_id' => 2, 'domains_id' => 5],
+            ['content' => 'Qui est le joueur de football le plus cher ?', 'video_path' => "path",'users_id' => 3, 'domains_id' => 6],
+            ['content' => 'Quelle est la langue la plus compliquée à apprendre ?', 'video_path' => "path",'users_id' => 4, 'domains_id' => 7],
+            ['content' => 'Quelles sont les précautions à prendre avant de casser un mur ?', 'video_path' => "path",'users_id' => 5, 'domains_id' => 8],
+            ['content' => 'On dit pain au chocolat ou chocolatine ?', 'video_path' => "path",'users_id' => 2, 'domains_id' => 9],
+            ['content' => 'Comment surmonter ses phobies ?', 'video_path' => "path",'users_id' => 3, 'domains_id' => 10],
+            ['content' => 'Quelle est la meilleure carte graphique repport qualité prix ?', 'video_path' => "path",'users_id' => 4, 'domains_id' => 11],
+            ['content' => 'Exemple template question type Art ?', 'video_path' => "path",'users_id' => 5, 'domains_id' => 12],
+            ['content' => 'Pourquoi les romains ont disparu ?', 'video_path' => "path",'users_id' => 2, 'domains_id' => 13],
+
         ];
 
         DB::table('questions')->insert($questions);
 
         $answers = [
-            ['content' => 'Gneu gneu le soleil, ah bon ?', 'video_path' => "path",'users_id' => 4, 'questions_id' => 1],
-            ['content' => 'parce que cest bien', 'video_path' => "path",'users_id' => 3, 'questions_id' => 2],
-            ['content' => 'renseigne toi sur les bases', 'video_path' => "path",'users_id' => 2, 'questions_id' => 3],
+            ['ans_content' => 'Il parait', 'video_path' => "path",'users_id' => 4, 'questions_id' => 1, 'answer_id' => null],
+            ['ans_content' => 'Je ne crois pas', 'video_path' => "path",'users_id' => 3, 'questions_id' => 2, 'answer_id' => null],
+            ['ans_content' => 'Si si renseigne toi mieux', 'video_path' => "path",'users_id' => 4, 'questions_id' => 2, 'answer_id' => 2],
+            ['ans_content' => 'Thermique pour \'autonomie', 'video_path' => "path",'users_id' => 2, 'questions_id' => 3, 'answer_id' => null],
         ];
 
         DB::table('answers')->insert($answers);
 
-        //$tickets = [
-        //    ['type' => 'Problème sur une réponse ou réponse manquante', 'email' => 'paul.chombart@gmail.com', 'content'=> 'il manque la réponse LOTR pour la musique du seigneur des anneaux'],
-        //    ['type' => 'Problème sur une musique/un son', 'email' => 'anthony.moutonnet@gmail.com', 'content'=> 'le cri de lelephant est dans le type son, il devrait etre dans animaux' ],
-        //    ['type' => 'Problème sur une réponse ou réponse manquante', 'email' => 'kevin.nochelsky@gmail.com', 'content'=> 'la réponse SOY marche pour shape of you, cest un peu abusé je trouve'],
-        //];
-
-        //DB::table('ticket')->insert($tickets);
-
-       // $reports = [
-        //    ['type' => 'Pseudo offenssant/innaproprié', 'content' => 'il aime pas jujutsu', 'for_user'=> 2, 'made_by' => 4],
-        //    ['type' => 'Comportement toxique', 'content' => 'il a pété (toxique le jeu de mot tmtc)', 'for_user'=> 2, 'made_by' => 3],
-        //];
-
-        //DB::table('report')->insert($reports);
-
-        //$news = [
-        //    ['content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit lorem scelerisque, lobortis magna non, dictum nunc. Aliquam eleifend lacinia nunc eu blandit. Praesent fermentum urna eu ex dapibus, sed fermentum turpis vestibulum. Curabitur congue sem dapibus, vehicula ex eleifend, placerat erat. Mauris efficitur risus quis nulla mattis elementum. Maecenas vehicula libero eget purus maximus, ut condimentum mi egestas. Etiam at odio at purus pretium venenatis ac id lorem.Fusce sed eleifend purus. Phasellus magna dolor, efficitur at sem fermentum, sagittis posuere tortor. Suspendisse quis dui ex. Duis fringilla ex neque, vitae fermentum lacus mollis at. Aliquam vel lobortis nisl. Suspendisse potenti. Pellentesque quis dapibus arcu, sit amet maximus metus. Nunc vulputate, purus vitae condimentum tincidunt, sapien justo volutpat diam, vitae egestas justo mi et eros. Ut finibus neque et finibus pharetra. Quisque condimentum orci lorem, vulputate luctus nunc feugiat vel. Nam consequat augue augue, id vulputate est bibendum eget. Sed eget odio lacus.']
-        //];
-
-        //DB::table('news')->insert($news);
     }
 }

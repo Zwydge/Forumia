@@ -13,10 +13,8 @@ class Notations extends Migration
      */
     public function up()
     {
-        Schema::create('notations', function (Blueprint $table) {
+        Schema::create('upvotes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('like');
-            $table->integer('dislike');
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id')->references('id')->on('users');
             $table->integer('answers_id')->unsigned();
@@ -31,6 +29,6 @@ class Notations extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notations');
+        Schema::dropIfExists('upvotes');
     }
 }
