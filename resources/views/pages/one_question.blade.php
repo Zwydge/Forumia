@@ -13,7 +13,23 @@
             @if($question[0]->video_path && $question[0]->video_path != "path")
                 <div class="video_part-quest">
                     <div class="video-infos">{{ $question[0]->name }} a ajouté une vidéo à sa question</div>
-                    <video class="video_element_quest" controls src="{{asset("media/img/questions/".$question[0]->video_path)}}"></video>
+
+                    <video
+                        id="my-video"
+                        class="video-js vjs-theme-fantasy video_element_quest"
+                        controls
+                        preload="auto"
+                        data-setup="{}"
+                    >
+                        <source src="{{asset("media/img/questions/".$question[0]->video_path)}}" type="video/mp4" />
+                        <p class="vjs-no-js">
+                            To view this video please enable JavaScript, and consider upgrading to a
+                            web browser that
+                            <a href="https://videojs.com/html5-video-support/" target="_blank"
+                            >supports HTML5 video</a
+                            >
+                        </p>
+                    </video>
                 </div>
             @endif
         </div>
@@ -36,9 +52,14 @@
         <div class="content_answers">
             <div class="title_answers">{{ count($answers) }} réponses</div>
             @foreach($answers as $answer)
-
                 @if(!$answer->answer_to)
-                    <div class="one_answers">
+                    <div class="@if ($loop->first && $answer->votes >= 10) validated-answer @endif one_answers">
+                        <div answer-id="{{$answer->id}}" class="vote-answer">
+                            @if (Auth::check())
+                                <img src="{{asset("media/img/tech/up.png")}}" alt="upvote">
+                            @endif
+                            <div class="number-upvote">{{$answer->votes}}</div>
+                        </div>
                         <div class="left_ans">
                             <img src="{{ asset("media/img/avatar/".$answer->avatar) }}" alt="">
                             <div class="anthor_ans">{{ $answer->name }}</div>

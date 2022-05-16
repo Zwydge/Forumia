@@ -36,8 +36,8 @@
                     </span>
                 </div>
                 <div class="action_elem">
-                    <img src="{{asset("media/img/tech/like.png")}}" alt="">
-                    <span class="number_stat">19</span>
+                    <img src="{{asset("media/img/tech/up.png")}}" alt="">
+                    <span class="number_stat">0</span>
                 </div>
             </div>
         </fieldset>
