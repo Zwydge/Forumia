@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Answers;
 use App\Domains;
 use App\Questions;
+use App\Relations;
+use App\Upvotes;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -32,11 +34,22 @@ class QuestionController extends Controller
             ->get();
 
         $answers = DB::table('answers')
-            ->select('answers.id', 'users.name','users.avatar', 'answers.ans_content', 'users.id as user_id', 'answers.answer_id as answer_to')
-            ->where('questions_id', $request->get("id", 1))
-            ->join('questions', 'questions.id', '=', 'answers.questions_id')
-            ->join('users', 'users.id', '=', 'answers.users_id')
-            ->get();
+            ->select(DB::raw('
+            count(upvotes.users_id) as votes,
+            upvotes.answers_id,
+            answers.questions_id,
+            answers.id,
+            users.name,
+            users.avatar,
+            answers.ans_content,
+            users.id as user_id,
+            answers.answer_id as answer_to'))
+            ->leftJoin('users', 'users.id', '=', 'answers.users_id')
+            ->leftJoin('upvotes', 'upvotes.answers_id', '=', 'answers.id')
+            ->where('answers.questions_id', $request->get("id", 1))
+            ->groupBy('answers.id')
+            ->orderBy('votes', 'desc')
+            ->get()->toArray();
 
         return view('pages.one_question', [
             'answers' => $answers,
@@ -135,5 +148,23 @@ class QuestionController extends Controller
             'answers' => $answers,
             'nb'=> 0
         ]);
+    }
+    public function vote_add(Request $request)
+    {
+        $relation = new Upvotes();
+        $relation->users_id = auth()->user()->id;
+        $relation->answers_id = $request['id'];
+        $relation->save();
+
+        return Response::json([], 200);
+    }
+
+    public function vote_remove(Request $request)
+    {
+        Upvotes::where('users_id','=',auth()->user()->id)
+            ->where('answers_id','=',$request['id'])
+            ->delete();
+
+        return Response::json([], 200);
     }
 }

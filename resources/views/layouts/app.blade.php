@@ -15,6 +15,7 @@
     <script src="{{ asset('js/jquery_ui.js') }}" defer></script>
     <script src="{{ asset('js/lib/notify.js') }}" defer></script>
     <script src="{{ asset('js/lib/shuffle.js') }}" defer></script>
+    <script src="{{ asset('js/lib/video.js') }}" defer></script>
     <script src="{{ asset('js/custom.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -24,6 +25,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/jquery-ui-themes-1.12.1/themes/base/jquery-ui.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/video.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/fantasy.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>

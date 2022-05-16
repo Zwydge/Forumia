@@ -42,3 +42,7 @@ Route::get('/mydomains', 'DomainController@my_domains')->name('mydomains');
 //COMPTE
 Route::get('/account', 'UserController@my_account')->name('account');
 Route::post('/update-account', 'UserController@update')->name('update-account');
+
+/*UPVOTE*/
+Route::post('/upvote_add', 'QuestionController@vote_add');
+Route::post('/upvote_remove', 'QuestionController@vote_remove');

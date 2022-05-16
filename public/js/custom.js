@@ -87,13 +87,14 @@ $( document ).ready(function() {
         }
     })
 
-    var Shuffle = window.Shuffle;
-    var element = document.querySelector('.actus_list');
-    var sizer = element.querySelector('.actus_elem');
+    if($(".actus_elem").length > 0){
+        var Shuffle = window.Shuffle;
+        var element = document.querySelector('.actus_list');
 
-    var shuffleInstance = new Shuffle(element, {
-        itemSelector: '.actus_elem',
-    });
+        var shuffleInstance = new Shuffle(element, {
+            itemSelector: '.actus_elem',
+        });
+    }
 
     var cat_arr = [];
 
@@ -136,5 +137,53 @@ $( document ).ready(function() {
         }
     });*/
 
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            }
+        }
+        return false;
+    };
+
+    var domain = getUrlParameter('domain');
+    if(domain){
+        $("[domain-id="+domain+"]").attr("enable", "enable");
+        cat_arr.push(domain);
+        shuffleInstance.filter(cat_arr);
+    }
+
+    $('.vote-answer img').click(function () {
+        var answer_id = $(this).parent().attr("answer-id");
+        console.log(answer_id);
+        $(this).parent().addClass("none-event");
+        $.ajax({
+            url : '/upvote_add',
+            type : 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data:{
+                id: answer_id,
+            },
+            dataType:'json',
+            success : function(data) {
+                console.log(data);
+                location.reload();
+            },
+            error : function(request,error)
+            {
+                console.log(error.message);
+                console.log("Impossible de mettre à jour les données")
+            }
+        });
+    })
 
 });
