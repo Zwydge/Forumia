@@ -708,3 +708,8 @@ img.logo-icon-domain {
     padding: 25px;
     border: 2px solid;
 }
+
+section#globe-part {
+    height: 650px;
+    width: auto;
+}

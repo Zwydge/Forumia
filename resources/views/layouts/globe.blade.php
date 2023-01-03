@@ -1,0 +1,1 @@
+<section id="globe-part"></section>

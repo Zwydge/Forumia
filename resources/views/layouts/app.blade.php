@@ -16,6 +16,10 @@
     <script src="{{ asset('js/lib/notify.js') }}" defer></script>
     <script src="{{ asset('js/lib/shuffle.js') }}" defer></script>
     <script src="{{ asset('js/lib/video.js') }}" defer></script>
+    <script src="{{ asset('js/lib/three.min.js') }}" defer></script>
+    <script src="{{ asset('js/lib/orbits.js') }}" defer></script>
+    <script src="{{ asset('js/lib/gtf.js') }}" defer></script>
+    <script src="{{ asset('js/globe.js') }}" defer></script>
     <script src="{{ asset('js/custom.js') }}" defer></script>
 
     <!-- Fonts -->
