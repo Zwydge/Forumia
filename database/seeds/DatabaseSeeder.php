@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             ['label' => 'Art'],
             ['label' => 'Histoire'],
             ['label' => 'Géographie'],
-            ['label' => 'Phylosophie'],
+            ['label' => 'Philosophie'],
             ['label' => 'Mathématiques'],
             ['label' => 'Electricité'],
             ['label' => 'Physique/Chimie'],
@@ -39,9 +39,7 @@ class DatabaseSeeder extends Seeder
             ['label' => 'Presse'],
             ['label' => 'Santé'],
             ['label' => 'Mode'],
-            ['label' => 'Communication'],
             ['label' => 'Jeux-Vidéos'],
-            ['label' => 'Logistiques'],
             ['label' => 'Sciences'],
         ];
 
@@ -62,35 +60,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'admin@test.com',
                 'roles_id' => 3,
                 //'avatar' => "1/jhin (2).jpg",
-            ],
-            [
-                'name' => 'Anthony',
-                'password' => bcrypt('123456'),
-                'email' => 'anthony@test.com',
-                'roles_id' => 1,
-                //'avatar' => "1/jhin (2).jpg",
-            ],
-            [
-                'name' => 'Kevin',
-                'password' => bcrypt('123456'),
-                'email' => 'kevin@test.com',
-                'roles_id' => 1,
-                //'avatar' => "1/jhin (2).jpg",
-            ],
-            [
-                'name' => 'Paul',
-                'password' => bcrypt('123456'),
-                'email' => 'paul@test.com',
-                'roles_id' => 1,
-                //'avatar' => "1/jhin (2).jpg",
-            ],
-            [
-                'name' => 'Sebastien',
-                'password' => bcrypt('123456'),
-                'email' => 'seb@test.com',
-                'roles_id' => 1,
-                //'avatar' => "1/jhin (2).jpg",
-            ],
+            ]
         ];
 
         DB::table('users')->insert($users);
@@ -112,7 +82,7 @@ class DatabaseSeeder extends Seeder
 
         ];
 
-        DB::table('questions')->insert($questions);
+        //DB::table('questions')->insert($questions);
 
         $answers = [
             ['ans_content' => 'Il parait', 'video_path' => "path",'users_id' => 4, 'questions_id' => 1, 'answer_id' => null],
@@ -121,7 +91,7 @@ class DatabaseSeeder extends Seeder
             ['ans_content' => 'Thermique pour \'autonomie', 'video_path' => "path",'users_id' => 2, 'questions_id' => 3, 'answer_id' => null],
         ];
 
-        DB::table('answers')->insert($answers);
+        //DB::table('answers')->insert($answers);
 
     }
 }

@@ -59,7 +59,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{route('domains')}}" class="nav-link">
-                            Domaines
+                            Catégories
                         </a>
                     </li>
                     @auth

@@ -16,9 +16,9 @@ class Relations extends Migration
         Schema::create('relations', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('questions_id')->unsigned();
-            $table->foreign('questions_id')->references('id')->on('questions');
+            $table->foreign('questions_id')->references('id')->on('questions')->onDelete('cascade');
             $table->integer('domains_id')->unsigned();
-            $table->foreign('domains_id')->references('id')->on('domains');
+            $table->foreign('domains_id')->references('id')->on('domains')->onDelete('cascade');
         });
     }
 

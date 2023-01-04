@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Response;
 
 class DomainController extends Controller
 {
@@ -21,9 +22,17 @@ class DomainController extends Controller
             ->orderBy('label', 'asc')
             ->get();
 
-        return view('pages.domains',[
+        return view('pages.domains', [
             'domains' => $domains,
         ]);
     }
 
+    public function domains_js()
+    {
+        $domains = DB::table('domains')
+            ->select(DB::raw('label, domains.id as id'))
+            ->get();
+
+        return Response::json($domains);
+    }
 }

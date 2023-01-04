@@ -16,9 +16,9 @@ class Notations extends Migration
         Schema::create('upvotes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('users_id')->unsigned();
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('answers_id')->unsigned();
-            $table->foreign('answers_id')->references('id')->on('answers');
+            $table->foreign('answers_id')->references('id')->on('answers')->onDelete('cascade');
         });
     }
 
