@@ -3,8 +3,9 @@
 @section('content')
     <div class="content">
         <div class="title m-b-md">
-            Knowledger
+            ForumIA
         </div>
+        @include('layouts.globe')
         <div class="container_search_bar accueil_bar">
             <input placeholder="{{ __('Posez votre question') }}" class="search_bar" type="text">
         </div>

@@ -20,9 +20,9 @@ class Questions extends Migration
             $table->string('video_path')->nullable();
             $table->integer('views')->default(0);
             $table->integer('users_id')->unsigned();
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('domains_id')->unsigned();
-            $table->foreign('domains_id')->references('id')->on('domains');
+            $table->foreign('domains_id')->references('id')->on('domains')->onDelete('cascade');
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->nullable();
         });

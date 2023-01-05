@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Response;
 use Illuminate\Http\Request;
+use Question;
 
 class QuestionController extends Controller
 {
@@ -23,11 +24,11 @@ class QuestionController extends Controller
     public function one_question(Request $request)
     {
         $question = Questions::find($request->get("id", 1));
-        $question->views = $question->views+1;
+        $question->views = $question->views + 1;
         $question->save();
 
         $question = DB::table('questions')
-            ->select('questions.content', 'users.name','questions.id', 'users.avatar','questions.video_path', 'domains.label')
+            ->select('questions.content', 'users.name', 'questions.id', 'users.avatar', 'questions.video_path', 'domains.label')
             ->where('questions.id', $request->get("id", 1))
             ->join('users', 'users.id', '=', 'questions.users_id')
             ->join('domains', 'domains.id', '=', 'questions.domains_id')
@@ -64,7 +65,7 @@ class QuestionController extends Controller
             ->orderBy('label', 'asc')
             ->get();
 
-        return view('pages.askquestion',['domains' => $domains]);
+        return view('pages.askquestion', ['domains' => $domains]);
     }
 
 
@@ -83,13 +84,13 @@ class QuestionController extends Controller
 
         $question->save();
 
-        if(isset($video)){
+        if (isset($video)) {
             $quest_id = $question->id;
-            $location = "public/media/img/questions/".$quest_id."";
+            $location = "public/media/img/questions/" . $quest_id . "";
             $video->move(base_path($location), $file->getClientOriginalName());
-            $question->video_path = "".$quest_id."/".$file->getClientOriginalName();
+            $question->video_path = "" . $quest_id . "/" . $file->getClientOriginalName();
             $question->save();
-        }else{
+        } else {
             $question->video_path = "";
             $question->save();
         }
@@ -114,15 +115,15 @@ class QuestionController extends Controller
 
         $answers = Answers::all();
         $questions = DB::table('questions')
-            ->select('questions.views as views','questions.id as id', 'domains.label as label', 'questions.content as content', 'users.id as user_id','users.avatar as user_avatar', 'users.name as name')
+            ->select('questions.views as views', 'questions.id as id', 'domains.label as label', 'questions.content as content', 'users.id as user_id', 'users.avatar as user_avatar', 'users.name as name')
             ->join('domains', 'domains.id', '=', 'questions.domains_id')
             ->join('users', 'users.id', '=', 'questions.users_id')
             ->get();
-        return view('main.accueil',[
+        return view('main.accueil', [
             'questions' => $questions,
             'domains' => $domains,
             'answers' => $answers,
-            'nb'=> 0
+            'nb' => 0
         ]);
     }
 
@@ -136,17 +137,17 @@ class QuestionController extends Controller
         $answers = Answers::all();
 
         $questions = DB::table('questions')
-            ->select('questions.views as views', 'questions.id as id', 'domains.label as label', 'questions.content as content','users.avatar as user_avatar', 'users.id as user_id', 'users.name as name')
+            ->select('questions.views as views', 'questions.id as id', 'domains.label as label', 'questions.content as content', 'users.avatar as user_avatar', 'users.id as user_id', 'users.name as name')
             ->where('questions.users_id', '=', auth()->user()->id)
             ->join('domains', 'domains.id', '=', 'questions.domains_id')
             ->join('users', 'users.id', '=', 'questions.users_id')
             ->get();
 
-        return view('pages.myquestions',[
+        return view('pages.myquestions', [
             'questions' => $questions,
             'domains' => $domains,
             'answers' => $answers,
-            'nb'=> 0
+            'nb' => 0
         ]);
     }
     public function vote_add(Request $request)
@@ -161,10 +162,50 @@ class QuestionController extends Controller
 
     public function vote_remove(Request $request)
     {
-        Upvotes::where('users_id','=',auth()->user()->id)
-            ->where('answers_id','=',$request['id'])
+        Upvotes::where('users_id', '=', auth()->user()->id)
+            ->where('answers_id', '=', $request['id'])
             ->delete();
 
         return Response::json([], 200);
+    }
+
+    public function deletequest(Request $request)
+    {
+        if ((Auth::check() && Auth::user()->roles_id != 1)) {
+
+
+            $question = Questions::find($request->get("id"));
+            $question->delete();
+
+            return Response::json([], 200);
+
+        } else {
+            return Response::json([], 403);
+        }
+    }
+
+    public function create_question(Request $request)
+    {
+        $content = $request->get('content');
+        $domain_id = $request->get('domain_id');
+        $question = new Questions();
+        $question->domains_id = $domain_id;
+        $question->users_id = $request->get('user_id');
+        $question->video_path = "path";
+        $question->content = $content;
+
+        $question->save();
+
+        return Response::json([], 200);
+    }
+
+    public function questions_js()
+    {
+        $questions = DB::table('questions')
+            ->select('questions.views as views', 'questions.id as id', 'questions.content as content', 'users.avatar as user_avatar', 'users.id as user_id', 'users.name as name')
+            ->join('users', 'users.id', '=', 'questions.users_id')
+            ->get();
+
+        return Response::json($questions);
     }
 }

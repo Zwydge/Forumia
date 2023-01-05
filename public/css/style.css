@@ -33,6 +33,7 @@ textarea, input {
 
 .content {
     text-align: center;
+    position: relative;
 }
 
 .title {
@@ -132,6 +133,7 @@ nav .nav-item.dropdown.show .dropdown-menu a{
     border-radius: 50px;
     border:0px solid #fff;
     cursor:pointer;
+    object-fit: contain;
 }
 .content_question .avatar_img img{
     width:30px;
@@ -170,6 +172,7 @@ nav .nav-item.dropdown.show .dropdown-menu a{
     margin-top: 25px;
 }
 .content_question {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -182,8 +185,8 @@ nav .nav-item.dropdown.show .dropdown-menu a{
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: -10px;
-    left: -10px;
+    top: -20px;
+    left: -20px;
 }
 .right_question_ask {
     display: flex;
@@ -438,6 +441,7 @@ textarea.search_bar.ui-autocomplete-input::placeholder {
 .content_ans {
     margin-left: 20px;
     padding: 10px;
+    text-align: left;
     padding-left: 20px;
     border-left: 1px solid #fff;
 }
@@ -707,4 +711,30 @@ img.logo-icon-domain {
     background-color: #8651c5;
     padding: 25px;
     border: 2px solid;
+}
+
+section#globe-part {
+    height: 650px;
+    width: auto;
+    position: sticky;
+}
+
+img.link-to-delete {
+    position: absolute;
+    cursor: pointer;
+    right: 50px;
+    width: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn-generate {
+    color: #fff;
+    text-transform: uppercase;
+    margin: 15px auto;
+    padding: 12px 30px;
+    border: 1px solid #fff;
+    width: 300px;
+    cursor: pointer;
+    user-select: none;
 }

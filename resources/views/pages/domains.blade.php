@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content domains-page">
-        <div class="domains-title-page">Les domaines de Knowledger</div>
+        <div class="domains-title-page">Catégories disponibles</div>
         <div class="domains-container">
             @foreach($domains as $domain)
                 <a href="{{route('search', ['domain' => $domain->label])}}" class="domain-element">

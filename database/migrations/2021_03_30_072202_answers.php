@@ -18,11 +18,11 @@ class Answers extends Migration
             $table->text('ans_content');
             $table->string('video_path')->nullable();
             $table->integer('users_id')->unsigned();
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('answer_id')->unsigned()->nullable();
-            $table->foreign('answer_id')->references('id')->on('answers');
+            $table->foreign('answer_id')->references('id')->on('answers')->onDelete('cascade');
             $table->integer('questions_id')->unsigned();
-            $table->foreign('questions_id')->references('id')->on('questions');
+            $table->foreign('questions_id')->references('id')->on('questions')->onDelete('cascade');
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->nullable();
         });
