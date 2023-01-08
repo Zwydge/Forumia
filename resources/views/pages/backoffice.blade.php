@@ -6,6 +6,9 @@
         <div class="title m-b-md">
             Backoffice
         </div>
+        <div class="content-api">
+            <input type="password" name="api-key" id="api-key">
+        </div>
         <div class="container_search_bar">
             <div class="btn-generate create-user">
                 Générer un utilisateur

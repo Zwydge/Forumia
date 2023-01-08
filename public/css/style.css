@@ -738,3 +738,8 @@ img.link-to-delete {
     cursor: pointer;
     user-select: none;
 }
+
+input#api-key {
+    width: 300px;
+    padding: 12px;
+}

@@ -16,10 +16,14 @@
     <script src="{{ asset('js/lib/notify.js') }}" defer></script>
     <script src="{{ asset('js/lib/shuffle.js') }}" defer></script>
     <script src="{{ asset('js/lib/video.js') }}" defer></script>
+    <!-- THREE JS -->
     <script src="{{ asset('js/lib/three.min.js') }}" defer></script>
     <script src="{{ asset('js/lib/orbits.js') }}" defer></script>
     <script src="{{ asset('js/lib/gtf.js') }}" defer></script>
     <script src="{{ asset('js/globe.js') }}" defer></script>
+    @if (Auth::user()->roles_id == 3)
+        <script src="{{ asset('js/openai.js') }}" defer></script>
+    @endif
     <script src="{{ asset('js/custom.js') }}" defer></script>
 
     <!-- Fonts -->
