@@ -7,7 +7,7 @@
             Backoffice
         </div>
         <div class="content-api">
-            <input type="password" name="api-key" id="api-key">
+            <input placeholder="Votre clée API" type="password" name="api-key" id="api-key">
         </div>
         <div class="container_search_bar">
             <div class="btn-generate create-user">

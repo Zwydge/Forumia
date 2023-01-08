@@ -23,7 +23,11 @@ $(document).ready(function () {
                 }),
                 success: function (response) {
                     defObject.resolve(response.choices[0].text);
-                }
+                },
+                error: function(xhr, status, error) {
+                    var err = eval("(" + xhr.responseText + ")");
+                    $.notify(err.error.message, "error");
+                  }
             });
 
             return defObject.promise();
