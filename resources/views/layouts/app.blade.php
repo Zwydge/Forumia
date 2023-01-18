@@ -21,7 +21,7 @@
     <script src="{{ asset('js/lib/orbits.js') }}" defer></script>
     <script src="{{ asset('js/lib/gtf.js') }}" defer></script>
     <script src="{{ asset('js/globe.js') }}" defer></script>
-    @if (Auth::user()->roles_id == 3)
+    @if (Auth::check() && Auth::user()->roles_id == 3)
         <script src="{{ asset('js/openai.js') }}" defer></script>
     @endif
     <script src="{{ asset('js/custom.js') }}" defer></script>
